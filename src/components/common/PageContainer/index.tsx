@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, BoxProps } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, isValidMotionProp } from "framer-motion";
 
 interface PageContainerProps extends BoxProps {
   animate?: boolean;
@@ -32,7 +32,7 @@ const pageVariants = {
 const PageContainer: React.FC<PageContainerProps> = ({
   children,
   animate = true,
-  ...props
+  ...restProps
 }) => {
   const MotionBox = motion(Box);
 
@@ -44,14 +44,18 @@ const PageContainer: React.FC<PageContainerProps> = ({
           pt: { xs: 8, sm: 10 }, // Space for fixed header
           minHeight: "100vh",
           width: "100%",
-          ...props.sx,
+          ...restProps.sx,
         }}
-        {...props}
+        {...restProps}
       >
         {children}
       </Box>
     );
   }
+
+  const restPropsForMotionBox = Object.fromEntries(
+    Object.entries(restProps).filter(([key]) => !isValidMotionProp(key)),
+  );
 
   return (
     <MotionBox
@@ -64,9 +68,9 @@ const PageContainer: React.FC<PageContainerProps> = ({
         pt: { xs: 8, sm: 10 }, // Space for fixed header
         minHeight: "100vh",
         width: "100%",
-        ...props.sx,
+        ...restPropsForMotionBox.sx,
       }}
-      {...props}
+      {...restPropsForMotionBox}
     >
       {children}
     </MotionBox>

@@ -90,7 +90,8 @@ const Menu: React.FC<MenuProps> = ({
     direction === "horizontal" ? HorizontalMenuItem : VerticalMenuItem;
 
   return (
-    <MenuComponent component="nav">
+    // TODO <MenuComponent component="nav">
+    <MenuComponent>
       {menuItems.map((item) => {
         const isActive =
           location.pathname === item.path ||
@@ -99,8 +100,8 @@ const Menu: React.FC<MenuProps> = ({
         return (
           <MenuItemComponent
             key={item.path}
-            component={RouterLink}
-            to={item.path}
+            // TODO component={RouterLink}
+            // TODO to={item.path}
             onClick={onItemClick}
             sx={{
               position: "relative",

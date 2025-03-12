@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Grid, Button, CircularProgress, Alert, Snackbar } from "@mui/material";
+import {
+  Grid,
+  Button,
+  CircularProgress,
+  Alert,
+  Snackbar,
+  SelectChangeEvent,
+} from "@mui/material";
 import Form from "../Form/Form";
 import TextField from "../Form/TextField";
 import Select from "../Form/Select";
@@ -55,6 +62,17 @@ const ContactForm: React.FC = () => {
     if (errors[name as keyof FormErrors]) {
       setErrors({ ...errors, [name]: undefined });
     }
+    e.preventDefault();
+  };
+
+  const handleSubjectChange = (e: SelectChangeEvent<unknown>) => {
+    const { name, value, checked } = e.target as HTMLInputElement;
+    setValues({ ...values, [name as string]: value });
+    // Clear error when field is edited
+    if (errors[name as keyof FormErrors]) {
+      setErrors({ ...errors, [name]: undefined });
+    }
+    e.preventDefault();
   };
 
   const validateForm = (): boolean => {
@@ -187,7 +205,7 @@ const ContactForm: React.FC = () => {
               label="Subject"
               options={subjectOptions}
               value={values.subject}
-              onChange={handleChange}
+              onChange={handleSubjectChange}
               error={!!errors.subject}
               helperText={errors.subject}
               required

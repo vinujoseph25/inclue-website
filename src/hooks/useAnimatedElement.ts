@@ -11,7 +11,7 @@ interface AnimationOptions {
 
 export default function useAnimatedElement(
   options: AnimationOptions = {},
-): [React.RefObject<any>, AnimationControls] {
+): [(node?: Element | null) => void, AnimationControls] {
   const {
     threshold = 0.1,
     triggerOnce = true,

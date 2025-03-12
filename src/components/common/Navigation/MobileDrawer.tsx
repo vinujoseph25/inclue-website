@@ -49,6 +49,14 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
     });
   };
 
+  // TODO - Move this to a utility function
+  const alpha = (color: string, opacity: number) => {
+    return `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(
+      color.slice(3, 5),
+      16,
+    )}, ${parseInt(color.slice(5, 7), 16)}, ${opacity})`;
+  };
+
   return (
     <Drawer
       anchor="right"
@@ -76,7 +84,6 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
           {navigationItems.map((item) => {
             const hasChildren = item.children && item.children.length > 0;
             const isSubmenuOpen = openSubmenus[item.name] || false;
-
             return (
               <React.Fragment key={item.path}>
                 <ListItem

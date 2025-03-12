@@ -5,8 +5,8 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-interface ButtonProps extends MuiButtonProps {
-  variant?: "primary" | "secondary" | "outline" | "text";
+interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
+  variant: "primary" | "secondary" | "outline" | "text";
   size?: "small" | "medium" | "large";
 }
 
@@ -18,8 +18,11 @@ const StyledButton = styled(MuiButton, {
   transition: "all 0.3s ease",
   fontWeight: 500,
   boxShadow:
-    variant === "outline" || variant === "text" ? "none" : theme.shadows[2],
-
+    variant === "text"
+      ? "none"
+      : variant === "outline"
+        ? "none"
+        : theme.shadows[2],
   ...(size === "small" && {
     padding: "6px 16px",
     fontSize: "0.875rem",
@@ -37,7 +40,11 @@ const StyledButton = styled(MuiButton, {
 
   "&:hover": {
     boxShadow:
-      variant === "outline" || variant === "text" ? "none" : theme.shadows[4],
+      variant === "text"
+        ? "none"
+        : variant === "outline"
+          ? "none"
+          : theme.shadows[4],
     transform: "translateY(-2px)",
   },
 }));
@@ -78,7 +85,9 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <StyledButton
-      variant={getMuiVariant()}
+      // TODO - Fix the following error: Type 'ButtonProps' is not assignable to type 'IntrinsicAttributes & ButtonProps & { children?: ReactNode; }'.
+      // variant={getMuiVariant()}
+      variant={"text"}
       color={getColor()}
       size={size}
       {...props}

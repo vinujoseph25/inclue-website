@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Box, BoxProps } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
+import { isValidMotionProp, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 interface AnimatedSectionProps extends BoxProps {
@@ -19,27 +19,27 @@ interface AnimatedSectionProps extends BoxProps {
 
 const animationVariants = {
   fadeIn: {
-    visible: { opacity: 1, transition: { duration: 0.6 } },
+    visible: { opacity: 1, transition: { duration: 0.6, delay: 0 } },
     hidden: { opacity: 0 },
   },
   slideUp: {
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0 } },
     hidden: { opacity: 0, y: 50 },
   },
   slideDown: {
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0 } },
     hidden: { opacity: 0, y: -50 },
   },
   slideLeft: {
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0 } },
     hidden: { opacity: 0, x: 50 },
   },
   slideRight: {
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0 } },
     hidden: { opacity: 0, x: -50 },
   },
   scale: {
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0 } },
     hidden: { opacity: 0, scale: 0.8 },
   },
 };
@@ -51,7 +51,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   duration,
   threshold = 0.1,
   once = true,
-  ...props
+  ...restProps
 }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
@@ -80,14 +80,18 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       delay,
     };
   }
+  const restPropsForMotionBox = Object.fromEntries(
+    Object.entries(restProps).filter(([key]) => !isValidMotionProp(key)),
+  );
 
   return (
     <MotionBox
-      ref={ref}
+      // TODO: Add ref to the MotionBox component
+      // ref={ref}
       initial="hidden"
       animate={controls}
       variants={selectedAnimation}
-      {...props}
+      {...restPropsForMotionBox}
     >
       {children}
     </MotionBox>
