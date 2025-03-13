@@ -32,14 +32,23 @@ inclue-website/
 │ │ └── icons/ # Icon assets
 │ ├── components/ # React components
 │ │ ├── common/ # Shared components
+│ │ │ ├── AnimatedSection/ # AnimatedSection component
+│ │ │ │ └── index.tsx # Component implementation
 │ │ │ ├── Button/ # Button component
 │ │ │ │ ├── index.tsx # Component implementation
 │ │ │ │ └── styles.ts # Component-specific styles
 │ │ │ ├── Card/ # Card component
 │ │ │ │ └── index.tsx # Component implementation
-│ │ │ ├── ErrorBoundary/ # Error boundary component
+│ │ │ ├── ContantForm/ # ContantForm component
 │ │ │ │ └── index.tsx # Component implementation
+│ │ │ ├── Container/ # Container component
+│ │ │ │ └── index.tsx # Component implementation
+│ │ │ ├── ErrorBoundary/ # Error boundary component
+│ │ │ │ ├── ErrorBoundary.tsx # Component implementation
+│ │ │ │ └── ErrorBoundaryWrapper.tsx # Component Wrapper implementation
 │ │ │ ├── Footer/ # Footer component
+│ │ │ │ └── index.tsx # Component implementation
+│ │ │ ├── Form/ # Form component
 │ │ │ │ └── index.tsx # Component implementation
 │ │ │ ├── Header/ # Header component
 │ │ │ │ ├── index.tsx # Component implementation
@@ -51,7 +60,13 @@ inclue-website/
 │ │ │ │ └── index.tsx # Component implementation
 │ │ │ ├── Loader/ # Loading indicator component
 │ │ │ │ └── index.tsx # Component implementation
+│ │ │ ├── Navigation/ # Navigation component
+│ │ │ │ └── index.tsx # Component implementation
+│ │ │ ├── PageContainer/ # PageContainer component
+│ │ │ │ └── index.tsx # Component implementation
 │ │ │ ├── PageTransition/ # Page transition wrapper
+│ │ │ │ └── index.tsx # Component implementation
+│ │ │ ├── ResponsiveImage/ # Responsive Image component
 │ │ │ │ └── index.tsx # Component implementation
 │ │ │ ├── SectionTitle/ # Section title component
 │ │ │ │ └── index.tsx # Component implementation
@@ -176,6 +191,7 @@ inclue-website/
 │ │ └── common.types.ts # Shared type definitions
 │ ├── utils/ # Utility functions
 │ │ ├── analytics.ts # Google Analytics utilities
+│ │ ├── animations.ts # Animation helper utilities
 │ │ ├── formValidation.ts # Form validation utilities
 │ │ ├── i18n.ts # Internationalization utilities
 │ │ ├── performance.ts # Performance monitoring utilities
@@ -183,6 +199,7 @@ inclue-website/
 │ │ └── seo.ts # SEO utilities
 │ ├── App.tsx # Main App component
 │ ├── index.tsx # Application entry point
+│ ├── react-app-env.d.ts # React environment typings
 │ └── reportWebVitals.ts # Performance reporting
 ├── .eslintrc.js # ESLint configuration
 ├── .gitignore # Git ignore rules

@@ -9,7 +9,7 @@ import AppRoutes from "./routes";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import { initI18n } from "./utils/i18n";
-import ErrorBoundary from "./errorBoundary/ErrorBoundary";
+import ErrorBoundary from "./components/common/ErrorBoundary/ErrorBoundary";
 
 // Initialize internationalization
 initI18n();
