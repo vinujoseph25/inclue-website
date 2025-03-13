@@ -190,8 +190,9 @@ inclue-website/
 ├── babel.config.js # Babel configuration
 ├── jest.config.js # Jest test configuration
 ├── jest.setup.js # Jest setup file
+├── package-lock.json # Package lock file
 ├── package.json # NPM dependencies and scripts
+├── PROJECT-STRUCTURE.md # Project Structure documentation
 ├── README.md # Project documentation
 ├── tsconfig.json # TypeScript configuration
-├── webpack.config.js # Webpack configuration
-└── yarn.lock # Yarn lock file
+└── webpack.config.js # Webpack configuration
