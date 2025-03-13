@@ -189,6 +189,7 @@ inclue-website/
 ├── .prettierrc # Prettier configuration
 ├── babel.config.js # Babel configuration
 ├── jest.config.js # Jest test configuration
+├── jest.setup.js # Jest setup file
 ├── package.json # NPM dependencies and scripts
 ├── README.md # Project documentation
 ├── tsconfig.json # TypeScript configuration
