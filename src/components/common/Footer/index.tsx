@@ -1,176 +1,213 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Box,
   Container,
   Grid,
   Typography,
-  IconButton,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  useTheme as useMuiTheme,
+  Link,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { intl } from "@/utils/i18n";
-import logo from "@/assets/images/logo/logo.png"; // Replace with actual logo path
+import { styled } from "@mui/material/styles";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import intl from "react-intl-universal";
+import SocialLinks from "../SocialLinks";
+import NewsletterForm from "../NewsletterForm";
+import LanguageSwitcher from "../LanguageSwitcher";
+import contactInfo from "../../../utils/contactInfo";
+
+import footerLogo from "@assets/images/logo/footer.png";
+
+// Import footer styles
+import footerStyles from "./styles";
+
+// Custom styled components
+const FooterContainer = styled(Box)(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === "light" ? theme.palette.primary.dark : "#001B2E",
+  color: theme.palette.common.white,
+  padding: theme.spacing(6, 0),
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(4, 0),
+  },
+}));
+
+const FooterHeading = styled(Typography)(({ theme }) => ({
+  color: theme.palette.common.white,
+  fontWeight: 600,
+  marginBottom: theme.spacing(2),
+}));
+
+const FooterLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.common.white,
+  textDecoration: "none",
+  display: "block",
+  marginBottom: theme.spacing(1),
+  "&:hover": {
+    color: theme.palette.secondary.light,
+    textDecoration: "none",
+  },
+}));
+
+const ContactItem = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "flex-start",
+  marginBottom: theme.spacing(2),
+}));
 
 const Footer: React.FC = () => {
-  const muiTheme = useMuiTheme();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
+  // Get current year for copyright notice
+  const currentYear = new Date().getFullYear();
+
+  // Apply footer styles
+  const styles = footerStyles(theme);
 
   return (
-    <Box
-      component="footer"
-      sx={{
-        py: 6,
-        backgroundColor: (theme) =>
-          theme.palette.mode === "light" ? "grey.100" : "#051726",
-      }}
-    >
+    <FooterContainer component="footer">
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: { xs: "center", md: "flex-start" },
-              }}
-            >
+          {/* Company Info */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Box mb={2}>
               <img
-                src={logo}
-                alt="Inclue Technologies"
-                height="50"
-                style={{ marginBottom: 16 }}
+                src={footerLogo}
+                alt="Inclue Technologies Logo"
+                style={{
+                  height: isMobile ? "40px" : "50px",
+                  marginBottom: theme.spacing(2),
+                }}
               />
-              <Typography variant="body2" color="text.secondary" align="left">
-                Inclue Technologies Private Limited is a tech startup with
-                innovative products and services in manufacturing and
-                healthcare. We utilize the potential of technology to create a
-                smart and connected world.
-              </Typography>
-              <Box sx={{ mt: 2, display: "flex" }}>
-                <IconButton color="primary">
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton color="primary">
-                  <TwitterIcon />
-                </IconButton>
-                <IconButton color="primary">
-                  <LinkedInIcon />
-                </IconButton>
-              </Box>
+            </Box>
+            <Typography variant="body2" color="inherit" paragraph>
+              {intl.get("footer.companyDescription")}
+            </Typography>
+            <Box mt={2}>
+              <SocialLinks variant="footer" />
             </Box>
           </Grid>
 
-          <Grid item xs={6} md={2}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
-              Products
-            </Typography>
-            <List dense>
-              <ListItem disableGutters>
-                <ListItemText>
-                  <Link
-                    to="/products/babble"
-                    style={{ color: muiTheme.palette.text.secondary }}
-                  >
-                    Babble
-                  </Link>
-                </ListItemText>
-              </ListItem>
-              <ListItem disableGutters>
-                <ListItemText>
-                  <Link
-                    to="/products/babble-lite"
-                    style={{ color: muiTheme.palette.text.secondary }}
-                  >
-                    Babble Lite
-                  </Link>
-                </ListItemText>
-              </ListItem>
-            </List>
+          {/* Quick Links */}
+          <Grid item xs={12} sm={6} md={3}>
+            <FooterHeading variant="h6">
+              {intl.get("footer.quickLinks")}
+            </FooterHeading>
+            <FooterLink href="/">{intl.get("navigation.home")}</FooterLink>
+            <FooterLink href="/products">
+              {intl.get("navigation.products")}
+            </FooterLink>
+            <FooterLink href="/services">
+              {intl.get("navigation.services")}
+            </FooterLink>
+            <FooterLink href="/industries">
+              {intl.get("navigation.industries")}
+            </FooterLink>
+            <FooterLink href="/about">
+              {intl.get("navigation.about")}
+            </FooterLink>
+            <FooterLink href="/contact">
+              {intl.get("navigation.contact")}
+            </FooterLink>
           </Grid>
 
-          <Grid item xs={6} md={2}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
-              Services
-            </Typography>
-            <List dense>
-              <ListItem disableGutters>
-                <ListItemText>
-                  <Link
-                    to="/services/industrial-automation"
-                    style={{ color: muiTheme.palette.text.secondary }}
-                  >
-                    Industrial Automation
-                  </Link>
-                </ListItemText>
-              </ListItem>
-              <ListItem disableGutters>
-                <ListItemText>
-                  <Link
-                    to="/services/custom-iot-services"
-                    style={{ color: muiTheme.palette.text.secondary }}
-                  >
-                    Custom IoT Services
-                  </Link>
-                </ListItemText>
-              </ListItem>
-              <ListItem disableGutters>
-                <ListItemText>
-                  <Link
-                    to="/services/plc-solutions"
-                    style={{ color: muiTheme.palette.text.secondary }}
-                  >
-                    PLC Solutions
-                  </Link>
-                </ListItemText>
-              </ListItem>
-              <ListItem disableGutters>
-                <ListItemText>
-                  <Link
-                    to="/services/web-development"
-                    style={{ color: muiTheme.palette.text.secondary }}
-                  >
-                    Web Development
-                  </Link>
-                </ListItemText>
-              </ListItem>
-            </List>
+          {/* Contact Info */}
+          <Grid item xs={12} sm={6} md={3}>
+            <FooterHeading variant="h6">
+              {intl.get("footer.contactUs")}
+            </FooterHeading>
+            <ContactItem>
+              <LocationOnIcon
+                style={{ marginRight: theme.spacing(1), marginTop: "4px" }}
+              />
+              <Typography variant="body2">
+                {contactInfo.address.full}
+              </Typography>
+            </ContactItem>
+            <ContactItem>
+              <PhoneIcon
+                style={{ marginRight: theme.spacing(1), marginTop: "4px" }}
+              />
+              <Typography variant="body2">
+                {contactInfo.contact.phone}
+              </Typography>
+            </ContactItem>
+            <ContactItem>
+              <EmailIcon
+                style={{ marginRight: theme.spacing(1), marginTop: "4px" }}
+              />
+              <Typography variant="body2">
+                {contactInfo.contact.email}
+              </Typography>
+            </ContactItem>
           </Grid>
 
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
-              Contact Us
+          {/* Newsletter */}
+          <Grid item xs={12} sm={6} md={3}>
+            <FooterHeading variant="h6">
+              {intl.get("footer.newsletter")}
+            </FooterHeading>
+            <Typography variant="body2" paragraph>
+              {intl.get("footer.newsletterDesc")}
             </Typography>
-            <Typography variant="body2" color="text.secondary" paragraph>
-              Father Mulawarickal Road, Thevara,
-              <br />
-              Kerala, 682013
-              <br />
-              India
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              <strong>Phone:</strong> +91-94006-55235
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              <strong>Email:</strong> info@incluetech.com
-            </Typography>
+            <NewsletterForm variant="dark" />
           </Grid>
         </Grid>
 
-        <Divider sx={{ mt: 4, mb: 2 }} />
-
-        <Box sx={{ textAlign: "center" }}>
-          <Typography variant="body2" color="text.secondary">
-            {intl.get("footer.copyright")}
-          </Typography>
+        {/* Copyright */}
+        <Box
+          mt={6}
+          pt={3}
+          style={{
+            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+            textAlign: isMobile ? "center" : "left",
+          }}
+        >
+          <Grid container spacing={2} alignItems="center">
+            <Grid item xs={12} md={6}>
+              <Typography variant="body2" color="inherit">
+                &copy; {currentYear} Inclue Technologies.{" "}
+                {intl.get("footer.allRightsReserved")}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                display="flex"
+                justifyContent={isMobile ? "center" : "flex-end"}
+                flexWrap="wrap"
+              >
+                <FooterLink
+                  href="/privacy-policy"
+                  style={{ marginRight: theme.spacing(2) }}
+                >
+                  {intl.get("footer.privacyPolicy")}
+                </FooterLink>
+                <FooterLink
+                  href="/terms-of-service"
+                  style={{ marginRight: theme.spacing(2) }}
+                >
+                  {intl.get("footer.termsOfService")}
+                </FooterLink>
+                <FooterLink href="/sitemap">
+                  {intl.get("footer.sitemap")}
+                </FooterLink>
+                <Box
+                  mt={2}
+                  display="flex"
+                  justifyContent={isMobile ? "center" : "flex-start"}
+                >
+                  <LanguageSwitcher />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
       </Container>
-    </Box>
+    </FooterContainer>
   );
 };
 

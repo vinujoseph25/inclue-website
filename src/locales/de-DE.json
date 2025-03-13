@@ -1,14 +1,182 @@
 {
-  "app.title": "Inclue Technologies",
-  "nav.home": "Startseite",
-  "nav.products": "Produkte",
-  "nav.services": "Dienste",
-  "nav.industries": "Branchen",
-  "nav.about": "Über Uns",
-  "nav.contact": "Kontakt",
-  "nav.resources": "Ressourcen",
-  "hero.title": "Intelligentere, vernetzte Lösungen schaffen",
-  "hero.subtitle": "Wir nutzen das Potenzial der Technologie, um eine intelligente und vernetzte Welt zu schaffen",
-  "hero.cta": "Mehr Entdecken",
-  "footer.copyright": "© 2023 Inclue Technologies. Alle Rechte vorbehalten."
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "babble": "Babble",
+    "babble_lite": "Babble Lite",
+    "services": "Services",
+    "industrial_automation": "Industrial Automation",
+    "iot_services": "IoT Services",
+    "plc_solutions": "PLC Solutions",
+    "web_development": "Web Development",
+    "industries": "Industries",
+    "manufacturing": "Manufacturing",
+    "healthcare": "Healthcare",
+    "about": "About Us",
+    "resources": "Resources",
+    "blog": "Blog",
+    "case_studies": "Case Studies",
+    "whitepapers": "Whitepapers",
+    "faqs": "FAQs",
+    "contact": "Contact",
+    "search": "Search"
+  },
+  "header": {
+    "switch_theme": "Switch Theme",
+    "switch_to_light": "Switch to Light Mode",
+    "switch_to_dark": "Switch to Dark Mode"
+  },
+  "footer": {
+    "address": "Inclue Technologies Pvt. Ltd., Dotspace Business Center, Total Tower, Edappally, Kochi – 682024, Kerala, India",
+    "allRightsReserved": "All Rights Reserved.",
+    "companyDescription": "We utilize the potential of technology to create a smart and connected world. At Inclue, we believe there is a simpler way of managing complex work processes.",
+    "contactUs": "Contact Us",
+    "email": "Email Address",
+    "emailContact": "info@incluetech.com",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe to our newsletter for the latest updates, industry insights, and news about our products and services.",
+    "phone": "+91 94006 55235",
+    "privacyPolicy": "Privacy Policy",
+    "quickLinks": "Quick Links",
+    "sitemap": "Sitemap",
+    "subscribe": "Subscribe",
+    "termsOfService": "Terms of Service"
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "request_demo": "Request Demo",
+    "featured": "Featured",
+    "backToHome": "Back to Home",
+    "contactUs": "Contact Us",
+    "error": "Something went wrong. Please try again.",
+    "loading": "Loading...",
+    "pageNotFound": "Page Not Found",
+    "readMore": "Read More",
+    "requestDemo": "Request Demo",
+    "sending": "Sending...",
+    "submit": "Submit",
+    "success": "Success!",
+    "thankYou": "Thank you for your submission!",
+    "viewAll": "View All"
+  },
+  "home": {
+    "seo": {
+      "title": "Home",
+      "description": "Inclue Technologies - Creating a smarter and more connected world through innovative technology solutions for manufacturing and healthcare industries."
+    },
+    "hero": {
+      "title": "Smart Technology Solutions for a Connected World",
+      "subtitle": "Transforming ideas into intelligent, efficient solutions",
+      "description": "Inclue Technologies helps businesses integrate cutting-edge technology with their daily operations to enhance efficiency, productivity, and effectiveness.",
+      "primary_button": "Our Products",
+      "secondary_button": "Contact Us"
+    },
+    "products": {
+      "title": "Our Innovative Products",
+      "subtitle": "Smart Solutions",
+      "description": "Our portfolio of innovative products and solutions is designed to meet modern business needs in manufacturing and healthcare industries.",
+      "view_all": "View All Products"
+    },
+    "services": {
+      "title": "Services We Offer",
+      "subtitle": "Our Expertise",
+      "description": "We provide a versatile range of technology services tailored to your specific industry needs and challenges.",
+      "view_all": "Explore All Services"
+    },
+    "industries": {
+      "title": "Industries We Serve",
+      "subtitle": "Our Focus",
+      "description": "We serve a diverse range of industries with specialized solutions that address unique challenges and requirements.",
+      "explore_solutions": "Explore Industry Solutions"
+    },
+    "benefits": {
+      "title": "Why Choose Inclue",
+      "subtitle": "Our Advantages",
+      "description": "Partnering with Inclue Technologies gives you access to proven advantages that drive tangible business results.",
+      "productivity": {
+        "title": "High Productivity",
+        "description": "Our solutions guarantee continuous workflow without compromises on quality and accuracy."
+      },
+      "quality": {
+        "title": "Superior Quality",
+        "description": "Automation ensures uniformity in all processes, guaranteeing standardization and quality in every operation."
+      },
+      "cost": {
+        "title": "Reduced Costs",
+        "description": "Streamline production lines and reduce operational costs while maintaining or improving quality."
+      },
+      "safety": {
+        "title": "Enhanced Safety",
+        "description": "Automation allows human workers to move into supervising positions while robots manage hazardous situations."
+      },
+      "data": {
+        "title": "Data Security & Accuracy",
+        "description": "Collect and maintain data securely, enabling informed decisions and improved business performance."
+      }
+    },
+    "clients": {
+      "title": "Our Clients",
+      "subtitle": "Trusted Partnerships",
+      "description": "We're proud to work with leading organizations across various industries, delivering solutions that drive real business value.",
+      "testimonials_title": "What Our Clients Say",
+      "testimonial1": {
+        "position": "IT Director",
+        "company": "CUMI",
+        "quote": "Inclue's Babble Lite platform has transformed our factory operations, giving us real-time insights and significantly reducing downtime."
+      },
+      "testimonial2": {
+        "position": "CEO",
+        "company": "TorkWell",
+        "quote": "Inclue Technologies has been instrumental in helping us implement a custom IoT solution that has revolutionized our business processes."
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "subtitle": "Get in touch with our team to discuss your requirements and explore how we can help you achieve your business goals.",
+      "primary_button": "Get Started",
+      "secondary_button": "Explore Products"
+    }
+  },
+  "products": {
+    "babble": {
+      "subtitle": "Smart Factory Management System",
+      "short_description": "A next-generation intelligent end-to-end IIOT platform focused on Industry 4.0, designed to monitor production processes in real-time."
+    },
+    "babble_lite": {
+      "subtitle": "Streamlined IoT Platform",
+      "short_description": "A lightweight version of our flagship product, offering essential IoT capabilities for smaller manufacturing operations."
+    }
+  },
+  "services": {
+    "industrial_automation": {
+      "title": "Industrial Automation",
+      "short_description": "Specialized automation solutions using PLCs, sensors, and HMIs to control and monitor industrial processes."
+    },
+    "iot_services": {
+      "title": "Custom IoT Services",
+      "short_description": "Tailored IoT implementations that connect devices, collect data, and enable smart decision-making."
+    },
+    "plc_solutions": {
+      "title": "PLC Solutions",
+      "short_description": "Custom PLC programming and implementation for controlling machinery and industrial equipment."
+    },
+    "scada_integration": {
+      "title": "SCADA Integration",
+      "short_description": "Integrating SCADA systems with industrial equipment for real-time monitoring and control of processes."
+    },
+    "web_development": {
+      "title": "Web Development",
+      "short_description": "Modern, responsive web applications with robust backend systems for business operations."
+    }
+  },
+  "industries": {
+    "manufacturing": {
+      "title": "Manufacturing",
+      "short_description": "Smart factory solutions for real-time monitoring, predictive maintenance, and optimized production processes."
+    },
+    "healthcare": {
+      "title": "Healthcare",
+      "short_description": "Connected healthcare solutions with HL7® FHIR® integration for real-time patient monitoring and data exchange."
+    }
+  }
 }

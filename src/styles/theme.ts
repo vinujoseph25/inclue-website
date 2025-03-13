@@ -1,16 +1,16 @@
-import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { createTheme, Theme, responsiveFontSizes } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 
-// Brand colors from style guide
+// Colors from Inclue brand guidelines
 const primaryBlue = "#0460E9";
 const electricBlue = "#0099FF";
 const midnightBlue = "#001B2E";
 const crystal = "#58CBF9";
 const morning = "#CCF1FF";
-const pearl = "#FFFFFF";
+const pearl = "#ffffff";
 
-// Create a theme instance
-export const createAppTheme = (mode: PaletteMode) => {
+// Create a theme instance for the given mode
+export const createAppTheme = (mode: PaletteMode): Theme => {
   let theme = createTheme({
     palette: {
       mode,
@@ -23,50 +23,49 @@ export const createAppTheme = (mode: PaletteMode) => {
       secondary: {
         main: crystal,
         light: morning,
-        dark: midnightBlue,
+        dark: "#3EAFD9", // Darker version of Crystal
         contrastText: midnightBlue,
       },
       background: {
-        default: mode === "light" ? pearl : midnightBlue,
-        paper: mode === "light" ? morning : "#051726", // Slightly lighter than midnight blue
+        default: mode === "light" ? pearl : "#121212",
+        paper: mode === "light" ? "#F5F9FC" : "#1E1E1E",
       },
       text: {
         primary: mode === "light" ? midnightBlue : pearl,
-        secondary: mode === "light" ? "#596B78" : crystal,
+        secondary: mode === "light" ? "#555555" : "#BBBBBB",
+      },
+      error: {
+        main: "#FF4D4F",
+      },
+      warning: {
+        main: "#FAAD14",
+      },
+      info: {
+        main: electricBlue,
+      },
+      success: {
+        main: "#52C41A",
       },
     },
     typography: {
-      fontFamily:
-        '"Funnel Display", "Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Funnel Display", "Helvetica", "Arial", sans-serif',
       h1: {
         fontWeight: 700,
-        fontSize: "3.5rem",
       },
       h2: {
         fontWeight: 700,
-        fontSize: "2.8rem",
       },
       h3: {
-        fontWeight: 700,
-        fontSize: "2.2rem",
+        fontWeight: 600,
       },
       h4: {
-        fontWeight: 500,
-        fontSize: "1.8rem",
+        fontWeight: 600,
       },
       h5: {
         fontWeight: 500,
-        fontSize: "1.4rem",
       },
       h6: {
         fontWeight: 500,
-        fontSize: "1.2rem",
-      },
-      body1: {
-        fontSize: "1rem",
-      },
-      body2: {
-        fontSize: "0.875rem",
       },
       button: {
         fontWeight: 500,
@@ -78,23 +77,16 @@ export const createAppTheme = (mode: PaletteMode) => {
         styleOverrides: {
           root: {
             borderRadius: 8,
-            padding: "10px 24px",
-            fontWeight: 500,
-          },
-          containedPrimary: {
-            backgroundColor: primaryBlue,
+            padding: "8px 16px",
+            boxShadow: "none",
             "&:hover": {
-              backgroundColor: midnightBlue,
+              boxShadow: "none",
             },
           },
-        },
-      },
-      MuiAppBar: {
-        styleOverrides: {
-          root: {
-            backgroundColor: mode === "light" ? pearl : midnightBlue,
-            boxShadow: "none",
-            borderBottom: `1px solid ${mode === "light" ? "#f0f0f0" : "#0c2c43"}`,
+          contained: {
+            "&:hover": {
+              boxShadow: "none",
+            },
           },
         },
       },
@@ -102,15 +94,50 @@ export const createAppTheme = (mode: PaletteMode) => {
         styleOverrides: {
           root: {
             borderRadius: 12,
-            boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+            boxShadow:
+              mode === "light"
+                ? "0 4px 12px rgba(0, 27, 46, 0.08)"
+                : "0 4px 12px rgba(0, 0, 0, 0.2)",
           },
         },
       },
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
+          },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            borderRadius: 8,
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            borderRadius: 8,
+          },
+        },
+      },
+      MuiLink: {
+        defaultProps: {
+          underline: "none",
+        },
+      },
     },
+    shape: {
+      borderRadius: 8,
+    },
+    spacing: 8,
   });
 
-  // Make fonts responsive
+  // Apply responsive typography
   theme = responsiveFontSizes(theme);
 
   return theme;
 };
+
+export default createAppTheme;

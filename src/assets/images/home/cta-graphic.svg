@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Background Shape -->
+  <circle cx="200" cy="150" r="130" fill="#FFFFFF" opacity="0.1" />
+  
+  <!-- Connected Devices Network -->
+  <g id="network">
+    <!-- Central Hub -->
+    <circle cx="200" cy="150" r="30" fill="#58CBF9" />
+    <circle cx="200" cy="150" r="25" fill="#0460E9" />
+    <circle cx="200" cy="150" r="20" fill="#FFFFFF" />
+    
+    <!-- Connection Lines -->
+    <g stroke="#FFFFFF" stroke-width="2" opacity="0.8">
+      <line x1="200" y1="150" x2="130" y2="80" />
+      <line x1="200" y1="150" x2="280" y2="80" />
+      <line x1="200" y1="150" x2="280" y2="200" />
+      <line x1="200" y1="150" x2="130" y2="210" />
+      <line x1="200" y1="150" x2="120" y2="150" />
+      <line x1="200" y1="150" x2="280" y2="150" />
+    </g>
+    
+    <!-- Connected Devices -->
+    <!-- Tablet -->
+    <rect x="110" y="65" width="40" height="30" rx="2" fill="#0099FF" />
+    <rect x="114" y="69" width="32" height="22" rx="1" fill="#CCF1FF" />
+    
+    <!-- Smartphone -->
+    <rect x="280" y="70" width="20" height="30" rx="2" fill="#0099FF" />
+    <rect x="282" y="73" width="16" height="24" rx="1" fill="#CCF1FF" />
+    
+    <!-- IoT Sensor -->
+    <circle cx="280" cy="200" r="15" fill="#0460E9" />
+    <circle cx="280" cy="200" r="10" fill="#CCF1FF" />
+    <circle cx="280" cy="200" r="5" fill="#58CBF9" />
+    
+    <!-- Wearable -->
+    <rect x="120" y="210" width="25" height="20" rx="10" fill="#0460E9" />
+    <rect x="125" y="215" width="15" height="10" rx="5" fill="#CCF1FF" />
+    
+    <!-- Smart Home Hub -->
+    <polygon points="120,150 110,140 110,160 120,150" fill="#0460E9" />
+    <circle cx="105" cy="150" r="15" fill="#0460E9" />
+    <circle cx="105" cy="150" r="10" fill="#58CBF9" />
+    
+    <!-- Server/Cloud -->
+    <path d="M300,150 L280,140 L280,160 Z" fill="#0460E9" />
+    <rect x="280" y="140" width="20" height="20" rx="5" fill="#0460E9" />
+    <rect x="285" y="145" width="10" height="10" rx="2" fill="#CCF1FF" />
+  </g>
+  
+  <!-- Data Visualization Elements -->
+  <g id="data-viz" opacity="0.9">
+    <!-- Pulse Wave Effect -->
+    <circle cx="200" cy="150" r="40" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.3">
+      <animate attributeName="r" from="30" to="80" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.8" to="0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="150" r="50" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.2">
+      <animate attributeName="r" from="40" to="90" dur="3s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" from="0.6" to="0" dur="3s" repeatCount="indefinite" begin="0.5s" />
+    </circle>
+    <circle cx="200" cy="150" r="60" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.1">
+      <animate attributeName="r" from="50" to="100" dur="3s" repeatCount="indefinite" begin="1s" />
+      <animate attributeName="opacity" from="0.4" to="0" dur="3s" repeatCount="indefinite" begin="1s" />
+    </circle>
+  </g>
+  
+  <!-- Data Flow Animation -->
+  <g id="data-packets">
+    <circle cx="165" cy="115" r="3" fill="#FFFFFF">
+      <animate attributeName="cx" from="200" to="130" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="cy" from="150" to="80" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="240" cy="115" r="3" fill="#FFFFFF">
+      <animate attributeName="cx" from="200" to="280" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="cy" from="150" to="80" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="240" cy="175" r="3" fill="#FFFFFF">
+      <animate attributeName="cx" from="200" to="280" dur="2.2s" repeatCount="indefinite" />
+      <animate attributeName="cy" from="150" to="200" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="165" cy="180" r="3" fill="#FFFFFF">
+      <animate attributeName="cx" from="200" to="130" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="cy" from="150" to="210" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="160" cy="150" r="3" fill="#FFFFFF">
+      <animate attributeName="cx" from="200" to="120" dur="1.3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="240" cy="150" r="3" fill="#FFFFFF">
+      <animate attributeName="cx" from="200" to="280" dur="1.6s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

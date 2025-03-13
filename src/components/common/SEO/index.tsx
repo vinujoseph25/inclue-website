@@ -29,7 +29,8 @@ const SEO: React.FC<SEOProps> = ({
   twitterCard = defaultTwitterCard,
 }) => {
   const siteUrl = "https://www.incluetech.com";
-  const fullTitle = `${title} | Inclue Technologies`;
+  const siteName = "Inclue Technologies";
+  const fullTitle = `${title} | ${siteName}`;
 
   return (
     <Helmet>
@@ -44,6 +45,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:type" content={ogType} />
       {ogUrl && <meta property="og:url" content={`${siteUrl}${ogUrl}`} />}
+      <meta property="og:site_name" content={siteName} />
 
       {/* Twitter Card meta tags */}
       <meta name="twitter:card" content={twitterCard} />

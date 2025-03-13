@@ -1,29 +1,77 @@
 import React, { useState } from "react";
-import { IconButton, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
-import TranslateIcon from "@mui/icons-material/Translate";
-import { useLanguage } from "@/context/LanguageContext";
+import {
+  Button,
+  Menu,
+  MenuItem,
+  Typography,
+  useTheme,
+  alpha,
+  Box,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { useLanguageContext } from "../../../context/LanguageContext";
 
-interface Language {
-  code: string;
-  name: string;
-  flag: string;
-}
+// Import icons
+import LanguageIcon from "@mui/icons-material/Language";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CheckIcon from "@mui/icons-material/Check";
 
-const languages: Language[] = [
-  { code: "en-US", name: "English", flag: "🇺🇸" },
-  { code: "de-DE", name: "Deutsch", flag: "🇩🇪" },
-];
+// Styled components
+const LanguageButton = styled(Button)(({ theme }) => ({
+  textTransform: "none",
+  fontSize: "0.95rem",
+  fontWeight: 500,
+  padding: theme.spacing(0.5, 1.5),
+  color: theme.palette.text.primary,
+  marginRight: theme.spacing(1),
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.primary.main, 0.05),
+  },
+}));
 
-interface LanguageSwitcherProps {
-  size?: "small" | "medium" | "large";
-  tooltip?: boolean;
-}
+const StyledMenu = styled(Menu)(({ theme }) => ({
+  "& .MuiPaper-root": {
+    borderRadius: theme.shape.borderRadius,
+    minWidth: 180,
+    boxShadow: theme.shadows[3],
+    backgroundColor: alpha(theme.palette.background.paper, 0.98),
+    backdropFilter: "blur(10px)",
+  },
+}));
 
-const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
-  size = "medium",
-  tooltip = true,
-}) => {
-  const { currentLanguage, changeLanguage } = useLanguage();
+const LanguageFlag = styled("span")(({ theme }) => ({
+  display: "inline-block",
+  width: 24,
+  height: 24,
+  borderRadius: "50%",
+  marginRight: theme.spacing(1),
+  position: "relative",
+  overflow: "hidden",
+  border: `1px solid ${alpha(theme.palette.divider, 0.3)}`,
+}));
+
+const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+  padding: theme.spacing(1, 2),
+  minHeight: 48,
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.primary.main, 0.08),
+  },
+  "&.active": {
+    backgroundColor: alpha(theme.palette.primary.main, 0.1),
+  },
+}));
+
+// Flag assets (replace with your actual flag assets)
+const flags: Record<string, string> = {
+  "en-US": "🇺🇸", // Replace with actual flag image path
+  "de-DE": "🇩🇪", // Replace with actual flag image path
+};
+
+const LanguageSwitcher: React.FC = () => {
+  const theme = useTheme();
+  const { currentLocale, locales, changeLocale, isLoading } =
+    useLanguageContext();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -35,47 +83,56 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     setAnchorEl(null);
   };
 
-  const handleLanguageChange = (code: string) => {
-    changeLanguage(code);
+  const handleLanguageChange = (locale: string) => {
+    changeLocale(locale);
     handleClose();
   };
 
-  const getCurrentLanguage = () => {
-    return (
-      languages.find((lang) => lang.code === currentLanguage) || languages[0]
-    );
+  // Get language name to display
+  const getCurrentLanguageName = () => {
+    const locale = locales.find((l) => l.value === currentLocale);
+    return locale ? locale.name : "English";
   };
 
-  const toggleButton = (
-    <IconButton
-      onClick={handleClick}
-      size={size}
-      color="inherit"
-      aria-label="Change language"
-      aria-controls={open ? "language-menu" : undefined}
-      aria-haspopup="true"
-      aria-expanded={open ? "true" : undefined}
-    >
-      <TranslateIcon fontSize={size} />
-    </IconButton>
-  );
+  // Even if it's loading, we should render the component in a loading state
+  // instead of returning null, which might cause it to disappear
+  const isReady = !isLoading;
+
+  // For debugging, add a console log
+  console.log("LanguageSwitcher render:", {
+    currentLocale,
+    isLoading,
+    locales,
+  });
+
+  if (!isReady) {
+    return (
+      <LanguageButton disabled>
+        <LanguageIcon fontSize="small" />
+        Loading...
+      </LanguageButton>
+    );
+  }
 
   return (
     <>
-      {tooltip ? (
-        <Tooltip title="Change language">{toggleButton}</Tooltip>
-      ) : (
-        toggleButton
-      )}
+      <LanguageButton
+        aria-controls={open ? "language-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
+        startIcon={<LanguageIcon fontSize="small" />}
+        endIcon={<ExpandMoreIcon fontSize="small" />}
+      >
+        {getCurrentLanguageName()}
+      </LanguageButton>
 
-      <Menu
-        id="language-menu"
+      <StyledMenu
         anchorEl={anchorEl}
+        id="language-menu"
         open={open}
         onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "language-button",
-        }}
+        onClick={handleClose}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "center",
@@ -85,22 +142,25 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           horizontal: "center",
         }}
       >
-        {languages.map((language) => (
-          <MenuItem
-            key={language.code}
-            onClick={() => handleLanguageChange(language.code)}
-            selected={currentLanguage === language.code}
+        {locales.map((locale) => (
+          <StyledMenuItem
+            key={locale.value}
+            onClick={() => handleLanguageChange(locale.value)}
+            className={currentLocale === locale.value ? "active" : ""}
           >
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <span style={{ marginRight: 8 }}>{language.flag}</span>
-              {language.name}
-            </Typography>
-          </MenuItem>
+            <Box display="flex" alignItems="center" width="100%">
+              <LanguageFlag>{flags[locale.value]}</LanguageFlag>
+              <Typography variant="body2">{locale.name}</Typography>
+              {currentLocale === locale.value && (
+                <CheckIcon
+                  fontSize="small"
+                  sx={{ ml: "auto", color: "primary.main" }}
+                />
+              )}
+            </Box>
+          </StyledMenuItem>
         ))}
-      </Menu>
+      </StyledMenu>
     </>
   );
 };

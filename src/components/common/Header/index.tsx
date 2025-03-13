@@ -1,240 +1,208 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
-  Typography,
-  Button,
-  IconButton,
   Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
   Container,
-  Menu,
-  MenuItem,
+  IconButton,
+  useScrollTrigger,
+  Slide,
+  useTheme,
   useMediaQuery,
-  useTheme as useMuiTheme,
-  Switch,
-  FormControlLabel,
+  alpha,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { Link as RouterLink } from "react-router-dom";
+
+// Import components
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+import LanguageSwitcher from "../LanguageSwitcher";
+import ThemeToggle from "../ThemeToggle";
+
+// Import contexts
+import { useTheme as useThemeContext } from "../../../context/ThemeContext";
+import { useLanguageContext } from "../../../context/LanguageContext";
+
+// Import icons
 import MenuIcon from "@mui/icons-material/Menu";
-import TranslateIcon from "@mui/icons-material/Translate";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { useTheme } from "@/context/ThemeContext";
-import { intl } from "@/utils/i18n";
-import logo from "@/assets/images/logo/logo.png"; // Replace with actual logo path
 
-const Header: React.FC = () => {
-  const { mode, toggleTheme } = useTheme();
-  const muiTheme = useMuiTheme();
-  const isMobile = useMediaQuery(muiTheme.breakpoints.down("md"));
-  const location = useLocation();
+import wordmarkLight from "../../../assets/images/logo/wordmark-light.png";
+import wordmarkDark from "../../../assets/images/logo/wordmark-dark.png";
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [langMenuAnchor, setLangMenuAnchor] = useState<null | HTMLElement>(
-    null,
+// Styled components
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: alpha(theme.palette.background.default, 0.95),
+  backdropFilter: "blur(10px)",
+  boxShadow: theme.shadows[2],
+  transition: "all 0.3s ease-in-out",
+  "&.transparent": {
+    backgroundColor: "transparent",
+    boxShadow: "none",
+  },
+  "&.transparent.scrolled": {
+    backgroundColor: alpha(theme.palette.background.default, 0.95),
+    backdropFilter: "blur(10px)",
+    boxShadow: theme.shadows[2],
+  },
+  "&.transparent .MuiToolbar-root": {
+    height: 80,
+  },
+  "&.transparent.scrolled .MuiToolbar-root": {
+    height: 70,
+  },
+}));
+
+const LogoContainer = styled(Box)(({ theme }) => ({
+  marginRight: theme.spacing(2),
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+}));
+
+const Logo = styled("img")({
+  height: 40,
+  width: "auto",
+});
+
+// Interface for header props
+interface HeaderProps {
+  transparent?: boolean;
+  showProgressBar?: boolean;
+}
+
+// Hidden on scroll function
+function HideOnScroll(props: { children: React.ReactElement }) {
+  const { children } = props;
+  const trigger = useScrollTrigger();
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
   );
-  const [currentLang, setCurrentLang] = useState("en-US");
+}
+
+const Header: React.FC<HeaderProps> = ({
+  transparent = false,
+  showProgressBar = false,
+}) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { mode } = useThemeContext();
+  const { currentLocale } = useLanguageContext();
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navigationItems = [
-    { name: intl.get("nav.home"), path: "/" },
-    { name: intl.get("nav.products"), path: "/products" },
-    { name: intl.get("nav.services"), path: "/services" },
-    { name: intl.get("nav.industries"), path: "/industries" },
-    { name: intl.get("nav.about"), path: "/about" },
-    { name: intl.get("nav.resources"), path: "/resources" },
+  // Menu items for navigation
+  const menuItems = [
+    { label: "Home", path: "/" },
+    { label: "Products", path: "/products" },
+    { label: "Services", path: "/services" },
+    { label: "Industries", path: "/industries" },
+    { label: "About", path: "/about" },
+    { label: "Resources", path: "/resources" },
+    { label: "Contact", path: "/contact" },
   ];
 
+  // Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+  // Logo source based on theme
+  // TODO
+  const logoSrc =
+    mode === "dark"
+      ? wordmarkDark // Replace with dark logo path
+      : wordmarkLight; // Replace with light logo path
 
-  const handleLangMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setLangMenuAnchor(event.currentTarget);
-  };
-
-  const handleLangMenuClose = () => {
-    setLangMenuAnchor(null);
-  };
-
-  const handleLangChange = (lang: string) => {
-    setCurrentLang(lang);
-    // Here you would typically reinitialize the internationalization
-    // initI18n(lang);
-    handleLangMenuClose();
-  };
+  // Determine app bar class names based on props and state
+  const appBarClassName = [
+    transparent ? "transparent" : "",
+    scrolled && transparent ? "scrolled" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <AppBar
-      position="fixed"
-      color="default"
-      elevation={scrolled ? 4 : 0}
-      sx={{
-        transition: "all 0.3s ease",
-        backgroundColor: scrolled
-          ? mode === "light"
-            ? "rgba(255, 255, 255, 0.95)"
-            : "rgba(0, 27, 46, 0.95)"
-          : "transparent",
-      }}
-    >
-      <Container maxWidth="lg">
-        <Toolbar disableGutters>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-              <img src={logo} alt="Inclue Technologies" height="40" />
-            </Link>
-          </Typography>
-
-          {!isMobile && (
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              {navigationItems.map((item) => (
-                <Button
-                  key={item.path}
-                  component={Link}
-                  to={item.path}
-                  color="inherit"
-                  sx={{
-                    mx: 1,
-                    borderBottom:
-                      location.pathname === item.path
-                        ? `2px solid ${muiTheme.palette.primary.main}`
-                        : "none",
-                    borderRadius: 0,
-                    "&:hover": {
-                      borderBottom: `2px solid ${muiTheme.palette.primary.main}`,
-                    },
-                  }}
-                >
-                  {item.name}
-                </Button>
-              ))}
-
-              <Button
-                component={Link}
-                to="/contact"
-                variant="contained"
-                color="primary"
-                sx={{ ml: 2 }}
-              >
-                {intl.get("nav.contact")}
-              </Button>
-
-              <IconButton
-                color="inherit"
-                onClick={handleLangMenuOpen}
-                sx={{ ml: 1 }}
-              >
-                <TranslateIcon />
-              </IconButton>
-
-              <Menu
-                anchorEl={langMenuAnchor}
-                open={Boolean(langMenuAnchor)}
-                onClose={handleLangMenuClose}
-              >
-                <MenuItem
-                  onClick={() => handleLangChange("en-US")}
-                  selected={currentLang === "en-US"}
-                >
-                  English
-                </MenuItem>
-                <MenuItem
-                  onClick={() => handleLangChange("de-DE")}
-                  selected={currentLang === "de-DE"}
-                >
-                  Deutsch
-                </MenuItem>
-              </Menu>
-
-              <IconButton color="inherit" onClick={toggleTheme} sx={{ ml: 1 }}>
-                {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-              </IconButton>
-            </Box>
-          )}
-
-          {isMobile && (
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <IconButton
-                color="inherit"
-                onClick={handleLangMenuOpen}
-                sx={{ ml: 1 }}
-              >
-                <TranslateIcon />
-              </IconButton>
-
-              <IconButton color="inherit" onClick={toggleTheme} sx={{ ml: 1 }}>
-                {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-              </IconButton>
-
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="end"
-                onClick={handleDrawerToggle}
-                sx={{ ml: 1 }}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Box>
-          )}
-        </Toolbar>
-      </Container>
-
-      <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
-        <Box
-          sx={{ width: 250 }}
-          role="presentation"
-          onClick={handleDrawerToggle}
-          onKeyDown={handleDrawerToggle}
+    <>
+      <HideOnScroll>
+        <StyledAppBar
+          position="fixed"
+          color="default"
+          className={appBarClassName}
         >
-          <List>
-            {navigationItems.map((item) => (
-              <ListItem
-                button
-                key={item.path}
-                component={Link}
-                to={item.path}
-                sx={{
-                  backgroundColor:
-                    location.pathname === item.path
-                      ? muiTheme.palette.action.selected
-                      : "transparent",
-                }}
-              >
-                <ListItemText primary={item.name} />
-              </ListItem>
-            ))}
-            <ListItem
-              button
-              component={Link}
-              to="/contact"
-              sx={{
-                backgroundColor:
-                  location.pathname === "/contact"
-                    ? muiTheme.palette.action.selected
-                    : "transparent",
-              }}
-            >
-              <ListItemText primary={intl.get("nav.contact")} />
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
-    </AppBar>
+          <Container maxWidth="lg">
+            <Toolbar disableGutters>
+              {/* Logo */}
+              <LogoContainer>
+                <RouterLink to="/">
+                  <Logo src={logoSrc} alt="Inclue Technologies" />
+                </RouterLink>
+              </LogoContainer>
+
+              {/* Desktop Navigation */}
+              {!isMobile && <DesktopMenu menuItems={menuItems} />}
+
+              <Box sx={{ flexGrow: 1 }} />
+
+              {/* Language Switcher */}
+              <Box sx={{ display: "flex", alignItems: "center", mr: 1 }}>
+                <LanguageSwitcher />
+              </Box>
+
+              {/* Theme Toggle */}
+              <Box sx={{ display: "flex", alignItems: "center", mr: 1 }}>
+                <ThemeToggle />
+              </Box>
+
+              {/* Mobile Menu Button */}
+              {isMobile && (
+                <IconButton
+                  edge="end"
+                  color="primary"
+                  aria-label="menu"
+                  onClick={() => setMobileMenuOpen(true)}
+                  sx={{ ml: 1 }}
+                >
+                  <MenuIcon />
+                </IconButton>
+              )}
+            </Toolbar>
+          </Container>
+        </StyledAppBar>
+      </HideOnScroll>
+
+      {/* Mobile Menu Drawer */}
+      {isMobile && (
+        <MobileMenu
+          open={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+          menuItems={menuItems}
+        />
+      )}
+
+      {/* Spacer div to push content below the fixed header */}
+      <Toolbar
+        sx={{
+          height: transparent && !scrolled ? 80 : 70,
+          transition: "height 0.3s ease-in-out",
+        }}
+      />
+    </>
   );
 };
 

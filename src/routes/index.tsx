@@ -1,28 +1,35 @@
-import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { CircularProgress, Box } from '@mui/material';
+import React, { Suspense } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Box, CircularProgress } from "@mui/material";
+import MainLayout from "@/layout/MainLayout";
 
-// Lazy-loaded pages
-const Home = lazy(() => import('@pages/Home'));
-const Products = lazy(() => import('@pages/Products'));
-const ProductDetail = lazy(() => import('@pages/Products/ProductDetail'));
-const Services = lazy(() => import('@pages/Services'));
-const ServiceDetail = lazy(() => import('@pages/Services/ServiceDetail'));
-const Industries = lazy(() => import('@pages/Industries'));
-const IndustryDetail = lazy(() => import('@pages/Industries/IndustryDetail'));
-const About = lazy(() => import('@pages/About'));
-const Contact = lazy(() => import('@pages/Contact'));
-const Resources = lazy(() => import('@pages/Resources'));
-const NotFound = lazy(() => import('@pages/NotFound'));
+// Lazy loading for page components
+const Home = React.lazy(() => import("../pages/Home"));
+const Products = React.lazy(() => import("../pages/Products"));
+const ProductDetail = React.lazy(
+  () => import("../pages/Products/ProductDetail"),
+);
+const Services = React.lazy(() => import("../pages/Services"));
+const ServiceDetail = React.lazy(
+  () => import("../pages/Services/ServiceDetail"),
+);
+const Industries = React.lazy(() => import("../pages/Industries"));
+const IndustryDetail = React.lazy(
+  () => import("../pages/Industries/IndustryDetail"),
+);
+const About = React.lazy(() => import("../pages/About"));
+const Contact = React.lazy(() => import("../pages/Contact"));
+const Resources = React.lazy(() => import("../pages/Resources"));
+const NotFound = React.lazy(() => import("../pages/NotFound"));
 
-// Loading component
-const PageLoader = () => (
+// Loading component for suspense fallback
+const Loading = () => (
   <Box
     sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "50vh",
     }}
   >
     <CircularProgress />
@@ -31,19 +38,22 @@ const PageLoader = () => (
 
 const AppRoutes: React.FC = () => {
   return (
-    <Suspense fallback={<PageLoader />}>
+    <Suspense fallback={<Loading />}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:id" element={<ServiceDetail />} />
-        <Route path="/industries" element={<Industries />} />
-        <Route path="/industries/:id" element={<IndustryDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="services" element={<Services />} />
+          <Route path="services/:id" element={<ServiceDetail />} />
+          <Route path="industries" element={<Industries />} />
+          <Route path="industries/:id" element={<IndustryDetail />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="resources" element={<Resources />} />
+          <Route path="404" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/404" replace />} />
+        </Route>
       </Routes>
     </Suspense>
   );

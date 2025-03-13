@@ -1,95 +1,55 @@
 import React from "react";
-import {
-  Button as MuiButton,
-  ButtonProps as MuiButtonProps,
-} from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { ButtonProps as MuiButtonProps } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { StyledButton } from "./styles";
 
-interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
-  variant: "primary" | "secondary" | "outline" | "text";
-  size?: "small" | "medium" | "large";
+// Define additional props beyond MUI Button props
+export interface ButtonProps extends Omit<MuiButtonProps, "color"> {
+  color?: "primary" | "secondary" | "white" | "black";
+  to?: string;
+  external?: boolean;
+  rounded?: boolean;
+  elevation?: number;
 }
 
-const StyledButton = styled(MuiButton, {
-  shouldForwardProp: (prop) => prop !== "variant",
-})<ButtonProps>(({ theme, variant, size }) => ({
-  borderRadius: "8px",
-  textTransform: "none",
-  transition: "all 0.3s ease",
-  fontWeight: 500,
-  boxShadow:
-    variant === "text"
-      ? "none"
-      : variant === "outline"
-        ? "none"
-        : theme.shadows[2],
-  ...(size === "small" && {
-    padding: "6px 16px",
-    fontSize: "0.875rem",
-  }),
-
-  ...(size === "medium" && {
-    padding: "10px 24px",
-    fontSize: "1rem",
-  }),
-
-  ...(size === "large" && {
-    padding: "12px 32px",
-    fontSize: "1.125rem",
-  }),
-
-  "&:hover": {
-    boxShadow:
-      variant === "text"
-        ? "none"
-        : variant === "outline"
-          ? "none"
-          : theme.shadows[4],
-    transform: "translateY(-2px)",
-  },
-}));
-
 const Button: React.FC<ButtonProps> = ({
-  variant = "primary",
-  size = "medium",
   children,
+  color = "primary",
+  variant = "contained",
+  to,
+  external = false,
+  rounded = true,
+  elevation = 2,
+  size = "medium",
   ...props
 }) => {
-  // Map our custom variants to Material UI variants
-  const getMuiVariant = () => {
-    switch (variant) {
-      case "primary":
-        return "contained";
-      case "secondary":
-        return "contained";
-      case "outline":
-        return "outlined";
-      case "text":
-        return "text";
-      default:
-        return "contained";
+  // Map our custom colors to MUI colors
+  const getMuiColor = (): "primary" | "secondary" | undefined => {
+    if (color === "primary" || color === "secondary") {
+      return color;
     }
+    return undefined; // For 'white' and 'black', we handle those with styled components
   };
 
-  // Map our custom colors to Material UI colors
-  const getColor = () => {
-    switch (variant) {
-      case "primary":
-        return "primary";
-      case "secondary":
-        return "secondary";
-      default:
-        return "primary";
-    }
-  };
+  // Set up link props if this is a navigation button
+  const linkProps = to
+    ? {
+        component: external ? "a" : RouterLink,
+        ...(external
+          ? { href: to, target: "_blank", rel: "noopener noreferrer" }
+          : { to }),
+      }
+    : {};
 
   return (
     <StyledButton
-      // TODO - Fix the following error: Type 'ButtonProps' is not assignable to type 'IntrinsicAttributes & ButtonProps & { children?: ReactNode; }'.
-      // variant={getMuiVariant()}
-      variant={"text"}
-      color={getColor()}
+      color={getMuiColor()}
+      variant={variant}
+      rounded={rounded}
+      elevation={elevation}
+      customColor={color === "white" || color === "black" ? color : undefined}
       size={size}
+      {...linkProps}
       {...props}
     >
       {children}
