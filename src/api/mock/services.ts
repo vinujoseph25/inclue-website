@@ -29,7 +29,7 @@ const services: Service[] = [
       "Training and Handover",
       "Ongoing Support",
     ],
-    imageUrl: "/assets/images/industrial-automation.jpg",
+    imageUrl: "/assets/images/services/industrial-automation.jpg",
   },
   {
     id: "custom-iot-services",
@@ -59,7 +59,7 @@ const services: Service[] = [
       "Deployment",
       "Maintenance and Support",
     ],
-    imageUrl: "/assets/images/custom-iot.jpg",
+    imageUrl: "/assets/images/services/custom-iot.jpg",
   },
   {
     id: "plc-solutions",
@@ -89,7 +89,7 @@ const services: Service[] = [
       "Testing and Commissioning",
       "Training and Support",
     ],
-    imageUrl: "/assets/images/plc-solutions.jpg",
+    imageUrl: "/assets/images/services/plc-solutions.jpg",
   },
   {
     id: "web-development",
@@ -119,7 +119,7 @@ const services: Service[] = [
       "Deployment and Launch",
       "Ongoing Support",
     ],
-    imageUrl: "/assets/images/web-development.jpg",
+    imageUrl: "/assets/images/services/web-development.jpg",
   },
 ];
 

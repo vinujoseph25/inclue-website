@@ -25,7 +25,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useTheme } from "@/context/ThemeContext";
 import { intl } from "@/utils/i18n";
-import logo from "@/assets/images/logo.png"; // Replace with actual logo path
+import logo from "@/assets/images/logo/logo.png"; // Replace with actual logo path
 
 const Header: React.FC = () => {
   const { mode, toggleTheme } = useTheme();

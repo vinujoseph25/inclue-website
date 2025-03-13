@@ -61,7 +61,7 @@ const products: Product[] = [
           "Efficiently manage raw materials to streamline production and avoid unnecessary waste. As a result, the return on investment can be increased.",
       },
     ],
-    imageUrl: "/assets/images/babble-product.jpg",
+    imageUrl: "/assets/images/products/babble-product.jpg",
   },
   {
     id: "babble-lite",
@@ -104,7 +104,7 @@ const products: Product[] = [
           "Access core functionality at a more accessible price point.",
       },
     ],
-    imageUrl: "/assets/images/babble-lite-product.jpg",
+    imageUrl: "/assets/images/products/babble-lite-product.jpg",
   },
 ];
 

@@ -15,7 +15,7 @@ const defaultDescription =
   "Inclue Technologies provides innovative solutions in manufacturing and healthcare with IoT and automation technology.";
 const defaultKeywords =
   "Inclue Technologies, IoT, automation, manufacturing, healthcare, Babble, PLC solutions";
-const defaultOgImage = "/assets/images/inclue-og-image.jpg";
+const defaultOgImage = "/assets/images/seo/og-image.png";
 const defaultTwitterCard = "summary_large_image";
 const defaultOgType = "website";
 

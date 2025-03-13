@@ -16,7 +16,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { intl } from "@/utils/i18n";
-import logo from "@/assets/images/logo.png"; // Replace with actual logo path
+import logo from "@/assets/images/logo/logo.png"; // Replace with actual logo path
 
 const Footer: React.FC = () => {
   const muiTheme = useMuiTheme();
