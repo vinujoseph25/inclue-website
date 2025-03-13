@@ -1,8 +1,4 @@
 inclue-website/
-├── .github/ # GitHub configuration
-│ └── workflows/ # CI/CD workflows
-│ ├── deploy.yml # Deployment workflow
-│ └── test.yml # Testing workflow
 ├── node_modules/
 ├── public/ # Static files
 │ ├── favicon.ico # Site favicon
@@ -192,9 +188,6 @@ inclue-website/
 ├── .gitignore # Git ignore rules
 ├── .prettierrc # Prettier configuration
 ├── babel.config.js # Babel configuration
-├── deploy/ # Deployment scripts
-│ ├── deploy.sh # Deployment shell script
-│ └── hostinger-config.js # Hostinger-specific config
 ├── jest.config.js # Jest test configuration
 ├── package.json # NPM dependencies and scripts
 ├── README.md # Project documentation
