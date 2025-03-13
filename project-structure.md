@@ -128,6 +128,8 @@ inclue-website/
 │ │ │ └── index.tsx # Component implementation
 │ │ └── WhitepaperCard/ # Whitepaper card component
 │ │ └── index.tsx # Component implementation
+│ ├── constant/ # Constant values
+│ │ ├── index.tsx # Constant values
 │ ├── context/ # React context providers
 │ │ ├── LanguageContext.tsx # Language context
 │ │ └── ThemeContext.tsx # Theme context
@@ -210,5 +212,6 @@ inclue-website/
 ├── package-lock.json # NPM package dependencies lock
 ├── package.json # NPM dependencies and scripts
 ├── README.md # Project documentation
+├── TODO.md # ToDo documentation
 ├── tsconfig.json # TypeScript configuration
 └── webpack.config.js # Webpack configuration
