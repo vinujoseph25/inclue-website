@@ -304,8 +304,7 @@ function a11yProps(index: number) {
 const ProductDetailPage: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const params = useParams<{ id: string }>();
-  const { id } = params;
+  const { id } = useParams<{ id: string }>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [product, setProduct] = useState<any>(null);
