@@ -58,7 +58,10 @@
     "success": "Success!",
     "thankYou": "Thank you for your submission!",
     "viewAll": "View All",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "backToServices": "Back to Services",
+    "serviceImage": "Service Illustration"
   },
   "home": {
     "seo": {
@@ -221,12 +224,31 @@
     }
   },
   "services": {
+    "title": "Our Services",
+    "pageTitle": "Services",
+    "metaDescription": "Inclue Technologies offers a comprehensive range of services including industrial automation, custom IoT solutions, PLC programming, and web development to help transform your operations.",
+    "metaKeywords": "Inclue services, industrial automation, custom IoT, PLC solutions, web development",
+    "subtitle": "Comprehensive technology solutions tailored to your specific needs",
+    "breadcrumb": "Services",
+    "viewDetails": "View Details",
+    "keyFeatures": "Key Features",
+    "detailError": "Unable to load service details. Please try again later.",
+    "subheading": "Innovative solutions for your business needs",
+    "description": "Inclue Technologies offers a range of specialized services to transform your business operations and enhance productivity.",
+
+    "overview": "Overview",
+    "benefits": "Benefits",
+    "solutions": "Our Solutions",
+    "ourProcess": "Our Process",
+    "getInTouch": "Ready to Get Started?",
+    "contactDescription": "Contact our team to discuss how we can help implement these solutions for your business.",
+
     "industrial_automation": {
       "title": "Industrial Automation",
       "short_description": "Specialized automation solutions using PLCs, sensors, and HMIs to control and monitor industrial processes."
     },
     "iot_services": {
-      "title": "Custom IoT Services",
+      "title": "Custom IoT",
       "short_description": "Tailored IoT implementations that connect devices, collect data, and enable smart decision-making."
     },
     "plc_solutions": {
@@ -240,6 +262,302 @@
     "web_development": {
       "title": "Web Development",
       "short_description": "Modern, responsive web applications with robust backend systems for business operations."
+    },
+    "hero": {
+      "title": "Transforming Businesses through Technology",
+      "subtitle": "We provide end-to-end solutions that help you harness the power of technology to optimize operations, enhance productivity, and drive growth.",
+      "ctaButton": "Contact Us"
+    },
+
+    "process": {
+      "title": "Our Process",
+      "subtitle": "A systematic approach to delivering successful technology solutions",
+
+      "discover": {
+        "title": "Discover & Assess",
+        "description": "We start by understanding your business objectives, current systems, and specific challenges to establish a clear vision for success."
+      },
+      "plan": {
+        "title": "Plan & Design",
+        "description": "Our experts design a comprehensive solution that addresses your needs while considering scalability, integration requirements, and budget constraints."
+      },
+      "implement": {
+        "title": "Implement & Develop",
+        "description": "We build your solution using industry best practices, quality assurance procedures, and regular progress updates to ensure alignment."
+      },
+      "test": {
+        "title": "Test & Validate",
+        "description": "Rigorous testing ensures all components function correctly, meet performance requirements, and integrate seamlessly with existing systems."
+      },
+      "deploy": {
+        "title": "Deploy & Launch",
+        "description": "We manage a smooth transition to production with minimal disruption, including documentation and hands-on training for your team."
+      },
+      "support": {
+        "title": "Support & Optimize",
+        "description": "Our commitment continues after launch with ongoing technical support, maintenance, and optimization to maximize your return on investment."
+      }
+    },
+
+    "industries": {
+      "title": "Industries We Serve",
+      "subtitle": "Specialized expertise across key sectors",
+      "keyCapabilities": "Key Capabilities",
+      "learnMore": "Learn More",
+
+      "manufacturing": {
+        "title": "Manufacturing",
+        "description": "We help manufacturing companies harness the power of technology to optimize production processes, enhance product quality, and reduce operational costs. Our solutions connect factory floor equipment, monitor production metrics in real-time, and provide actionable insights for continuous improvement.",
+        "feature1": "Smart factory management systems",
+        "feature2": "Real-time production monitoring and analytics",
+        "feature3": "Predictive maintenance solutions",
+        "feature4": "Energy and utilities management"
+      },
+      "healthcare": {
+        "title": "Healthcare",
+        "description": "Our healthcare technology solutions enable providers to deliver better patient care while streamlining operations. We specialize in developing interoperable systems that connect medical devices, EHR platforms, and healthcare facilities for improved data sharing, monitoring, and decision-making.",
+        "feature1": "Healthcare interoperability solutions",
+        "feature2": "Patient monitoring systems",
+        "feature3": "Medical device integration",
+        "feature4": "Healthcare data analytics"
+      }
+    },
+
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Hear from organizations we've helped transform",
+      "quote1": "Inclue Technologies transformed our manufacturing operations with their automation solutions. We've seen a 35% increase in productivity and significantly reduced downtime. Their team's expertise and commitment to our success made all the difference.",
+      "quote2": "Implementing Inclue's healthcare interoperability solution has revolutionized how we manage patient data. The system seamlessly connects with our existing infrastructure and has improved our staff efficiency by 40%. Their understanding of healthcare workflows was impressive.",
+      "quote3": "The custom IoT solution from Inclue has given us unprecedented visibility into our operations. Real-time monitoring and analytics have helped us optimize processes and reduce waste by 25%. Their ongoing support ensures we continue to maximize the benefits of our investment."
+    },
+
+    "cta": {
+      "title": "Ready to Transform Your Operations?",
+      "subtitle": "Let's discuss how our technology solutions can help you achieve your business goals.",
+      "contactButton": "Contact Us Today",
+      "scheduleButton": "Schedule a Consultation",
+      "directContact": "Reach Us Directly",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More",
+      "requestDemo": "Request Demo",
+      "contactUs": "Contact Us"
+    },
+
+    "detail": {
+      "title": "{service} Services",
+      "keyPoints": "Key Benefits",
+      "contactButton": "Discuss Your Project",
+
+      "featuresTitle": "Features & Capabilities",
+      "featuresSubtitle": "Comprehensive solutions tailored to your specific requirements",
+
+      "processTitle": "Our Process",
+      "processSubtitle": "A systematic approach to ensuring successful implementation",
+
+      "caseStudiesTitle": "Success Stories",
+      "caseStudiesSubtitle": "See how our clients have benefited from our services",
+      "viewCaseStudy": "View Case Study",
+
+      "faqTitle": "Frequently Asked Questions",
+      "faqSubtitle": "Answers to common questions about our services",
+
+      "relatedTitle": "Related Services",
+      "relatedSubtitle": "Explore our other offerings that complement this service",
+
+      "ctaTitle": "Ready to Get Started?",
+      "ctaText": "Contact us today to discuss your project requirements and discover how our services can help you achieve your business goals.",
+      "ctaButton": "Contact Us Now"
+    },
+
+    "industrialAutomation": {
+      "title": "Industrial Automation",
+      "shortDescription": "Smart automation solutions to enhance your manufacturing processes.",
+      "longDescription": "Industrial automation is an integral part of Industry 4.0 and is closely associated with control engineering. Industrial automation ensures the use of control devices, including PC / PLCs / PACs to monitor industrial processes, equipment, and technology by reducing labor intervention wherever possible.",
+      "benefits": {
+        "highProductivity": {
+          "title": "High Productivity",
+          "description": "Industrial automation guarantees that a plant runs throughout the year, without any breaks or compromises on quality and accuracy."
+        },
+        "qualityControl": {
+          "title": "Superior Product Quality",
+          "description": "Automation ensures uniformity in all processes, guarantying standardization, and quality."
+        },
+        "costReduction": {
+          "title": "Reduced Production Cost",
+          "description": "Due to advances in sensors, smart devices, software, and machine learning technologies, automation can streamline production lines and reduce costs, while maintaining quality."
+        },
+        "safety": {
+          "title": "High Safety",
+          "description": "Automation allows human workers to move into supervising positions and deploy robots to manage dangerous situations."
+        },
+        "dataSecurity": {
+          "title": "Increased Data Security and Accuracy",
+          "description": "Automation permits data collection in a secured manner, allowing companies to make informed decisions."
+        }
+      },
+      "solutions": {
+        "plc": {
+          "title": "PLCs",
+          "description": "Inclue designs exceptional PLCs that can be utilized in industrial plants and factories for controlling a series of machinery, including motors, pumps, circuit breakers, lights, and fans."
+        },
+        "sensors": {
+          "title": "Industrial Automation Sensors",
+          "description": "They support making production systematized, automated, and intelligent, allowing supervisors to easily monitor any changes occurring on the site in real-time."
+        },
+        "hmi": {
+          "title": "Human-Machine Interfaces (HMIs)",
+          "description": "Interfaces that connect a human to a machine, device, or system. They help in initiating and ending cycles, modifying set points, and performing other functions."
+        }
+      },
+      "process": {
+        "consultation": {
+          "title": "Initial Consultation",
+          "description": "We discuss your business goals, challenges, and requirements to understand how automation can benefit your specific operations."
+        },
+        "design": {
+          "title": "System Design",
+          "description": "Our team creates a customized automation solution designed specifically for your facility and requirements."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "We handle the integration of hardware and software components, ensuring minimal disruption to your operations."
+        },
+        "testing": {
+          "title": "Testing and Validation",
+          "description": "Comprehensive testing ensures all systems work as expected before final deployment."
+        },
+        "training": {
+          "title": "Training and Handover",
+          "description": "We provide thorough training to your team and ensure a smooth transition to the new automated systems."
+        },
+        "support": {
+          "title": "Ongoing Support",
+          "description": "Our commitment doesn't end at deployment - we offer continued technical support and maintenance services."
+        }
+      }
+    },
+
+    "customIoT": {
+      "title": "Custom IoT",
+      "shortDescription": "Tailored IoT solutions that connect and optimize your operations.",
+      "longDescription": "Our custom IoT services help businesses harness the power of connected devices to gather real-time data, improve decision-making, and enhance operational efficiency. We develop end-to-end IoT solutions that address specific business challenges.",
+      "benefits": {
+        "realTimeMonitoring": {
+          "title": "Real-Time Monitoring",
+          "description": "Gain visibility into operations with continuous monitoring and instant alerts."
+        },
+        "predictiveMaintenance": {
+          "title": "Predictive Maintenance",
+          "description": "Anticipate equipment failures before they occur, reducing downtime and repair costs."
+        },
+        "enhancedEfficiency": {
+          "title": "Enhanced Efficiency",
+          "description": "Optimize resource utilization and workflow based on accurate data insights."
+        },
+        "scalability": {
+          "title": "Scalability",
+          "description": "Our solutions grow with your business, allowing for easy expansion and adaptation."
+        },
+        "integration": {
+          "title": "Seamless Integration",
+          "description": "Connect with existing systems and technologies for a unified operational view."
+        }
+      },
+      "solutions": {
+        "sensorNetworks": {
+          "title": "Sensor Networks",
+          "description": "Comprehensive sensor deployment for data collection across your entire operation."
+        },
+        "dataAnalytics": {
+          "title": "Data Analytics Platforms",
+          "description": "Advanced analytics solutions that transform raw data into actionable insights."
+        },
+        "cloudConnectivity": {
+          "title": "Cloud Connectivity",
+          "description": "Secure cloud infrastructure for data storage, processing, and accessibility."
+        }
+      }
+    },
+
+    "plcSolutions": {
+      "title": "PLC Solutions",
+      "shortDescription": "Advanced programmable logic controllers for precise industrial control.",
+      "longDescription": "Our PLC solutions provide robust, reliable control systems for manufacturing and industrial processes. We design and implement custom PLC programming to automate complex operations, improve consistency, and increase production efficiency.",
+      "benefits": {
+        "reliability": {
+          "title": "High Reliability",
+          "description": "Industrial-grade components designed to operate continuously in demanding environments."
+        },
+        "precision": {
+          "title": "Precision Control",
+          "description": "Exact timing and sequencing of operations for consistent quality and output."
+        },
+        "flexibility": {
+          "title": "Programming Flexibility",
+          "description": "Adaptable control systems that can be modified to meet changing production requirements."
+        },
+        "troubleshooting": {
+          "title": "Easy Troubleshooting",
+          "description": "Diagnostic capabilities that quickly identify and resolve issues."
+        },
+        "integration": {
+          "title": "System Integration",
+          "description": "Seamless connection with other control systems, sensors, and business applications."
+        }
+      }
+    },
+
+    "webDevelopment": {
+      "title": "Web Development",
+      "shortDescription": "Custom web solutions that elevate your digital presence.",
+      "longDescription": "Our web development services create custom, responsive websites and web applications that reflect your brand identity and meet your business objectives. We focus on user experience, performance, and SEO optimization to ensure your digital presence delivers results.",
+      "benefits": {
+        "customDesign": {
+          "title": "Custom Design",
+          "description": "Unique, brand-aligned websites that stand out from templates and competitors."
+        },
+        "responsiveness": {
+          "title": "Responsive Design",
+          "description": "Optimal viewing and interaction experience across all devices and screen sizes."
+        },
+        "performance": {
+          "title": "High Performance",
+          "description": "Fast-loading pages and smooth interactions that keep users engaged."
+        },
+        "seoOptimized": {
+          "title": "SEO Optimization",
+          "description": "Built-in search engine optimization to improve visibility and rankings."
+        },
+        "securityFocus": {
+          "title": "Security Focus",
+          "description": "Protected against common vulnerabilities with regular security updates."
+        }
+      },
+      "solutions": {
+        "corporateWebsites": {
+          "title": "Corporate Websites",
+          "description": "Professional web presence that communicates your brand values and services."
+        },
+        "ecommerce": {
+          "title": "E-commerce Solutions",
+          "description": "Online stores with secure payment processing and inventory management."
+        },
+        "webApplications": {
+          "title": "Web Applications",
+          "description": "Custom applications that automate processes and enhance customer engagement."
+        }
+      }
+    },
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "message": "Message",
+      "service": "Service Interested In",
+      "submit": "Submit Request",
+      "thankYou": "Thank you for your interest!",
+      "responseMessage": "We've received your inquiry and will contact you shortly."
     }
   },
   "industries": {
@@ -518,5 +836,12 @@
         "messageMinLength": "Message should be at least 10 characters"
       }
     }
+  },
+  "error": {
+    "failedToLoadService": "Failed to load service details",
+    "serviceNotFound": "Service not found",
+    "tryAgain": "Please try again later",
+    "validationError": "Please check your input and try again",
+    "formError": "There was an error submitting the form"
   }
 }

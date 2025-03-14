@@ -85,7 +85,7 @@ const ServicesSection: React.FC = () => {
       icon: <SettingsIcon fontSize="large" />,
     },
     {
-      id: "iot-services",
+      id: "custom-iot",
       title: intl.get("services.iot_services.title"),
       description: intl.get("services.iot_services.short_description"),
       icon: <DevicesIcon fontSize="large" />,

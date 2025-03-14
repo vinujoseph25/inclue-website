@@ -14,7 +14,6 @@ import IndustryCard from "@components/industries/IndustryCard";
 // import { useSelector, useDispatch } from "react-redux";
 // import { RootState } from "../redux/store";
 // import { fetchIndustries } from "../redux/slices/industriesSlice";
-import AnimatedSection from "@components/common/AnimatedSection";
 import intl from "react-intl-universal";
 import CallToAction from "@/components/home/CallToAction";
 import ErrorBoundary from "@/components/common/ErrorBoundary/ErrorBoundary";

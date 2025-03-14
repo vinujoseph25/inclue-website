@@ -32,8 +32,6 @@ inclue-website/
 │ │ └── icons/ # Icon assets
 │ ├── components/ # React components
 │ │ ├── common/ # Shared components
-│ │ │ ├── AnimatedSection/ # AnimatedSection component
-│ │ │ │ └── index.tsx # Component implementation
 │ │ │ ├── Button/ # Button component
 │ │ │ │ ├── index.tsx # Component implementation
 │ │ │ │ └── styles.ts # Component-specific styles

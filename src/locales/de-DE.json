@@ -153,7 +153,7 @@
       "short_description": "Specialized automation solutions using PLCs, sensors, and HMIs to control and monitor industrial processes."
     },
     "iot_services": {
-      "title": "Custom IoT Services",
+      "title": "Custom IoT",
       "short_description": "Tailored IoT implementations that connect devices, collect data, and enable smart decision-making."
     },
     "plc_solutions": {

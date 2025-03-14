@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({
           label: "Industrial Automation",
           path: "/services/industrial-automation",
         },
-        { label: "IOT Services", path: "/services/iot-services" },
+        { label: "Custom IOT", path: "/services/custom-iot" },
         { label: "PLC Solutions", path: "/services/plc-solutions" },
         { label: "SCADA Integration", path: "/services/scada-integration" },
         { label: "Web Development", path: "/services/web-development" },
