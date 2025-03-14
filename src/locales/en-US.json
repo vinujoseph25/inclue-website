@@ -178,5 +178,76 @@
       "title": "Healthcare",
       "short_description": "Connected healthcare solutions with HL7® FHIR® integration for real-time patient monitoring and data exchange."
     }
+  },
+  "about": {
+    "seo": {
+      "title": "About Inclue Technologies | Smart & Connected Solutions",
+      "description": "Learn about Inclue Technologies and our mission to create a smart and connected world through innovative technology solutions for manufacturing and healthcare."
+    },
+    "hero": {
+      "title": "We Are Inclue",
+      "subtitle": "We utilize the potential of technology to create a smart and connected world"
+    },
+    "history": {
+      "title": "Our Journey",
+      "subtitle": "From our founding to where we are today, discover how Inclue Technologies has evolved",
+      "foundation": {
+        "title": "Founded as SmartGenics",
+        "description": "Our company was founded by a group of industry experts with a strong vision to develop efficient and reliable software solutions specifically for the manufacturing industries."
+      },
+      "product": {
+        "title": "Launch of Babble & Babble Lite",
+        "description": "We introduced our flagship products, Babble and Babble Lite, offering smart factory management systems that help businesses optimize their operations and increase productivity."
+      },
+      "rebranding": {
+        "title": "Rebranded to Inclue Technologies",
+        "description": "SmartGenics was rebranded to Inclue Technologies to better reflect our expanded vision and service offerings across multiple industries."
+      },
+      "future": {
+        "title": "Expansion into Healthcare",
+        "description": "We expanded our solutions into the healthcare sector, leveraging IoT and FHIR® integration capabilities to transform medical data management."
+      }
+    },
+    "mission_vision": {
+      "title": "Our Purpose",
+      "subtitle": "Driven by a clear mission and vision, we create technology that makes a difference"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide innovative, high-quality technology solutions that help businesses overcome complex challenges and achieve their goals efficiently."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To become a global leader in creating integrated technological ecosystems that transform how businesses operate in the digital era."
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "We continuously pursue innovative solutions to drive the industry forward."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "We conduct our business with honesty, transparency, and strong ethical principles."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We maintain the highest standards in our products, services, and customer relationships."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We believe in the power of teamwork and partnerships to create exceptional outcomes."
+      }
+    },
+    "team": {
+      "title": "Leadership Team",
+      "subtitle": "Meet the dedicated professionals behind Inclue Technologies",
+      "founder_ceo": "Founder & CEO",
+      "cto": "Chief Technology Officer",
+      "product_lead": "Product Lead",
+      "bio1": "With over 15 years of experience in industrial automation and software development, John leads Inclue Technologies with a vision to revolutionize how businesses implement smart technology.",
+      "bio2": "Jane brings extensive expertise in IoT and cloud technologies, driving the technical innovation that powers our products and services.",
+      "bio3": "Mike oversees the development and improvement of our product portfolio, ensuring they meet the highest standards of quality and user experience."
+    }
   }
 }

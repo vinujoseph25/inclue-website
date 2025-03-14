@@ -5,8 +5,6 @@ import { store } from "./redux/store";
 import { ThemeProvider } from "./context/ThemeContext";
 import {} from "./styles/theme";
 import AppRoutes from "./routes";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
 import { initI18n } from "./utils/i18n";
 import ErrorBoundary from "./components/common/ErrorBoundary/ErrorBoundary";
 import { LanguageProvider } from "./context/LanguageContext";

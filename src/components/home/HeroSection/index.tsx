@@ -141,6 +141,7 @@ const HeroSection: React.FC = () => {
                   size="large"
                   component={RouterLink}
                   to="/products"
+                  customButton
                 >
                   {intl.get("home.hero.primary_button")}
                 </HeroButton>
@@ -160,6 +161,7 @@ const HeroSection: React.FC = () => {
                   size="large"
                   component={RouterLink}
                   to="/contact"
+                  customButton
                 >
                   {intl.get("home.hero.secondary_button")}
                 </HeroButton>

@@ -47,18 +47,18 @@ const MissionVision: React.FC = () => {
       title: intl.get("about.values.innovation.title"),
       description: intl.get("about.values.innovation.description"),
     },
-    {
-      title: intl.get("about.values.integrity.title"),
-      description: intl.get("about.values.integrity.description"),
-    },
+    // {
+    //   title: intl.get("about.values.integrity.title"),
+    //   description: intl.get("about.values.integrity.description"),
+    // },
     {
       title: intl.get("about.values.excellence.title"),
       description: intl.get("about.values.excellence.description"),
     },
-    {
-      title: intl.get("about.values.collaboration.title"),
-      description: intl.get("about.values.collaboration.description"),
-    },
+    // {
+    //   title: intl.get("about.values.collaboration.title"),
+    //   description: intl.get("about.values.collaboration.description"),
+    // },
   ];
 
   return (
@@ -110,6 +110,49 @@ const MissionVision: React.FC = () => {
             </motion.div>
           </Grid>
 
+          {/* Values Card */}
+          <Grid item xs={12} md={6} lg={4}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <StyledCard elevation={4}>
+                <Box
+                  p={3}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                >
+                  <IconWrapper>
+                    <VisibilityIcon fontSize="inherit" />
+                  </IconWrapper>
+                  <Typography
+                    variant="h4"
+                    component="h3"
+                    gutterBottom
+                    align="center"
+                  >
+                    {intl.get("about.values.title")}
+                  </Typography>
+                </Box>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  {values.map((value, index) => (
+                    <Typography
+                      variant="body1"
+                      paragraph
+                      align="center"
+                      key={index}
+                    >
+                      <strong>{value.title}:</strong> {value.description}
+                    </Typography>
+                  ))}
+                </CardContent>
+              </StyledCard>
+            </motion.div>
+          </Grid>
+
           {/* Vision Card */}
           <Grid item xs={12} md={6} lg={4}>
             <motion.div
@@ -141,49 +184,6 @@ const MissionVision: React.FC = () => {
                   <Typography variant="body1" paragraph align="center">
                     {intl.get("about.vision.description")}
                   </Typography>
-                </CardContent>
-              </StyledCard>
-            </motion.div>
-          </Grid>
-
-          {/* Values Card */}
-          <Grid item xs={12} lg={4}>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              <StyledCard elevation={4}>
-                <Box
-                  p={3}
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                >
-                  <IconWrapper>
-                    <StarsIcon fontSize="inherit" />
-                  </IconWrapper>
-                  <Typography
-                    variant="h4"
-                    component="h3"
-                    gutterBottom
-                    align="center"
-                  >
-                    {intl.get("about.values.title")}
-                  </Typography>
-                </Box>
-                <CardContent sx={{ flexGrow: 1 }}>
-                  {values.map((value, index) => (
-                    <ValueItem key={index}>
-                      <Typography variant="h6" gutterBottom>
-                        {value.title}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {value.description}
-                      </Typography>
-                    </ValueItem>
-                  ))}
                 </CardContent>
               </StyledCard>
             </motion.div>

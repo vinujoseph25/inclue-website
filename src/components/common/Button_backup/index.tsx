@@ -1,10 +1,7 @@
 import React from "react";
-import {
-  Button as MuiButton,
-  ButtonProps as MuiButtonProps,
-  styled,
-} from "@mui/material";
+import { ButtonProps as MuiButtonProps } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
+import { StyledButton } from "./styles";
 
 // Define additional props beyond MUI Button props
 export interface ButtonProps extends Omit<MuiButtonProps, "color"> {
@@ -13,17 +10,7 @@ export interface ButtonProps extends Omit<MuiButtonProps, "color"> {
   external?: boolean;
   rounded?: boolean;
   elevation?: number;
-  customButton?: boolean;
 }
-
-interface StyledButtonProps {
-  rounded?: boolean;
-  elevation?: number;
-  customColor?: string;
-}
-
-// Styled button component with custom styling options
-export const StyledButton = styled(MuiButton)<StyledButtonProps>(() => ({}));
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -34,7 +21,6 @@ const Button: React.FC<ButtonProps> = ({
   rounded = true,
   elevation = 2,
   size = "medium",
-  customButton = false,
   ...props
 }) => {
   // Map our custom colors to MUI colors
@@ -55,19 +41,17 @@ const Button: React.FC<ButtonProps> = ({
       }
     : {};
 
-  const customButtonProps = customButton
-    ? {
-        color: getMuiColor(),
-        variant,
-        rounded,
-        elevation,
-        customColor: color === "white" || color === "black" ? color : undefined,
-        size,
-      }
-    : {};
-
   return (
-    <StyledButton {...linkProps} {...props} {...customButtonProps}>
+    <StyledButton
+      color={getMuiColor()}
+      variant={variant}
+      rounded={rounded}
+      elevation={elevation}
+      customColor={color === "white" || color === "black" ? color : undefined}
+      size={size}
+      {...linkProps}
+      {...props}
+    >
       {children}
     </StyledButton>
   );

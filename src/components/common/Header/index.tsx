@@ -98,9 +98,36 @@ const Header: React.FC<HeaderProps> = ({
   // Menu items for navigation
   const menuItems = [
     { label: "Home", path: "/" },
-    { label: "Products", path: "/products" },
-    { label: "Services", path: "/services" },
-    { label: "Industries", path: "/industries" },
+    {
+      label: "Products",
+      path: "/products",
+      children: [
+        { label: "Babble", path: "/products/babble" },
+        { label: "Babble Lite", path: "/products/babble-lite" },
+      ],
+    },
+    {
+      label: "Services",
+      path: "/services",
+      children: [
+        {
+          label: "Industrial Automation",
+          path: "/services/industrial-automation",
+        },
+        { label: "IOT Services", path: "/services/iot-services" },
+        { label: "PLC Solutions", path: "/services/plc-solutions" },
+        { label: "SCADA Integration", path: "/services/scada-integration" },
+        { label: "Web Development", path: "/services/web-development" },
+      ],
+    },
+    {
+      label: "Industries",
+      path: "/industries",
+      children: [
+        { label: "Manufacturing", path: "/industries/manufacturing" },
+        { label: "HealthCare", path: "/industries/healthcare" },
+      ],
+    },
     { label: "About", path: "/about" },
     { label: "Resources", path: "/resources" },
     { label: "Contact", path: "/contact" },

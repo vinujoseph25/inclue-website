@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
+  // Button,
   Menu,
-  MenuItem,
+  // MenuItem,
   Typography,
   useTheme,
   alpha,
@@ -15,6 +15,8 @@ import intl from "react-intl-universal";
 // Import icons
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import Button from "../Button";
+import StyledMenuItem from "../MenuItem";
 
 // Styled components
 const NavLink = styled(Button)(({ theme }) => ({
@@ -56,17 +58,17 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
   },
 }));
 
-const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
-  padding: theme.spacing(1.5, 2),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.primary.main, 0.1),
-  },
-  "&.active": {
-    backgroundColor: alpha(theme.palette.primary.main, 0.1),
-    color: theme.palette.primary.main,
-    fontWeight: 600,
-  },
-}));
+// const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+//   padding: theme.spacing(1.5, 2),
+//   "&:hover": {
+//     backgroundColor: alpha(theme.palette.primary.main, 0.1),
+//   },
+//   "&.active": {
+//     backgroundColor: alpha(theme.palette.primary.main, 0.1),
+//     color: theme.palette.primary.main,
+//     fontWeight: 600,
+//   },
+// }));
 
 // Custom link component to wrap RouterLink with MenuItem
 const MenuItemLink = React.forwardRef<HTMLAnchorElement, any>((props, ref) => (
@@ -158,9 +160,8 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
                     key={child.label}
                     onClick={handleMenuClose}
                     className={isActive(child.path) ? "active" : ""}
-                    // TODO: Fix routing for nested menu items
-                    // component={MenuItemLink}
-                    // to={child.path}
+                    component={MenuItemLink}
+                    to={child.path}
                   >
                     <Typography variant="body2">
                       {intl.get(`navigation.${child.label.toLowerCase()}`) ||
@@ -177,9 +178,8 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
         return (
           <NavLink
             key={item.label}
-            // TODO Fix routing for simple links
-            // component={MenuItemLink}
-            // to={item.path}
+            component={MenuItemLink}
+            to={item.path}
             className={isActive(item.path) ? "active" : ""}
           >
             {intl.get(`navigation.${item.label.toLowerCase()}`) || item.label}
