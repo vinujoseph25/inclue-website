@@ -250,6 +250,82 @@
       "bio3": "Mike oversees the development and improvement of our product portfolio, ensuring they meet the highest standards of quality and user experience."
     }
   },
+  "resources": {
+    "pageTitle": "Resources",
+    "metaDescription": "Access resources from Inclue Technologies, including blogs, case studies, whitepapers, and FAQs to learn more about our solutions in manufacturing and healthcare.",
+    "metaKeywords": "Inclue Technologies resources, industrial automation blogs, healthcare technology whitepapers, manufacturing case studies, technology FAQs",
+    "title": "Resources & Insights",
+    "subtitle": "Discover our latest insights, case studies, whitepapers, and guides to help you navigate the world of industrial automation and healthcare technology.",
+
+    "tabs": {
+      "blog": "Blog",
+      "caseStudies": "Case Studies",
+      "whitepapers": "Whitepapers",
+      "faqs": "FAQs"
+    },
+
+    "hero": {
+      "title": "Knowledge Center",
+      "subtitle": "Access valuable insights and resources to help you leverage technology for smarter operations and better outcomes."
+    },
+
+    "blog": {
+      "searchPlaceholder": "Search articles...",
+      "categoryLabel": "Category",
+      "resultsFound": "{count} articles found",
+      "noResults": "No articles found matching your criteria. Try adjusting your search.",
+      "errorLoading": "Unable to load blog articles. Please try again later.",
+      "readMore": "Read More",
+      "categories": {
+        "all": "All Categories",
+        "industrialAutomation": "Industrial Automation",
+        "healthcare": "Healthcare",
+        "iot": "IoT",
+        "plc": "PLC"
+      }
+    },
+
+    "caseStudies": {
+      "searchPlaceholder": "Search case studies...",
+      "industryLabel": "Industry",
+      "resultsFound": "{count} case studies found",
+      "noResults": "No case studies found matching your criteria. Try adjusting your search.",
+      "errorLoading": "Unable to load case studies. Please try again later.",
+      "readMore": "View Case Study",
+      "keyResults": "Key Results",
+      "industries": {
+        "all": "All Industries",
+        "manufacturing": "Manufacturing",
+        "healthcare": "Healthcare",
+        "utilities": "Utilities"
+      }
+    },
+
+    "whitepapers": {
+      "searchPlaceholder": "Search whitepapers...",
+      "resultsFound": "{count} whitepapers found",
+      "noResults": "No whitepapers found matching your criteria. Try adjusting your search.",
+      "errorLoading": "Unable to load whitepapers. Please try again later.",
+      "download": "Download PDF",
+      "downloadStarted": "Download started for {title}",
+      "by": "By {author}",
+      "pages": "{count} pages"
+    },
+
+    "faqs": {
+      "searchPlaceholder": "Search frequently asked questions...",
+      "resultsFound": "{count} FAQs found",
+      "noResults": "No FAQs found matching your criteria. Try adjusting your search.",
+      "errorLoading": "Unable to load FAQs. Please try again later.",
+      "categories": {
+        "all": "All",
+        "general": "General",
+        "products": "Products",
+        "services": "Services",
+        "healthcare": "Healthcare"
+      }
+    }
+  },
   "contact": {
     "pageTitle": "Contact Us",
     "metaDescription": "Get in touch with Inclue Technologies for smart technology solutions in manufacturing and healthcare. Contact us for inquiries, support, or partnerships.",
