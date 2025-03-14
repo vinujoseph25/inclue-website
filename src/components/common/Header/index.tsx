@@ -186,15 +186,17 @@ const Header: React.FC<HeaderProps> = ({
 
               <Box sx={{ flexGrow: 1 }} />
 
+              {/* TODO */}
               {/* Language Switcher */}
-              <Box sx={{ display: "flex", alignItems: "center", mr: 1 }}>
+              {/* <Box sx={{ display: "flex", alignItems: "center", mr: 1 }}>
                 <LanguageSwitcher />
-              </Box>
+              </Box> */}
 
+              {/* TODO */}
               {/* Theme Toggle */}
-              <Box sx={{ display: "flex", alignItems: "center", mr: 1 }}>
+              {/* <Box sx={{ display: "flex", alignItems: "center", mr: 1 }}>
                 <ThemeToggle />
-              </Box>
+              </Box> */}
 
               {/* Mobile Menu Button */}
               {isMobile && (
