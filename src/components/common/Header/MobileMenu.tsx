@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   Drawer,
   List,
-  ListItem,
+  // ListItem,
   ListItemText,
   Collapse,
   IconButton,
@@ -20,6 +20,7 @@ import intl from "react-intl-universal";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ListItem from "../ListItem";
 
 // Styled components
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
@@ -174,8 +175,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 <StyledListItem
                   onClick={handleNavigation}
                   className={isActive(item.path) ? "active" : ""}
-                  // component={ListItemLink}
-                  // to={item.path}
+                  component={ListItemLink}
+                  to={item.path}
                 >
                   <ListItemText
                     primary={
@@ -192,8 +193,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                     {item.children!.map((child) => (
                       <NestedListItem
                         key={child.label}
-                        // component={ListItemLink}
-                        // to={child.path}
+                        component={ListItemLink}
+                        to={child.path}
                         onClick={handleNavigation}
                         className={isActive(child.path) ? "active" : ""}
                       >
