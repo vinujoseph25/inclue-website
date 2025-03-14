@@ -138,6 +138,17 @@
     }
   },
   "products": {
+    "pageTitle": "Products",
+    "metaDescription": "Discover Inclue Technologies' innovative products including Babble and Babble Lite for industrial automation and smart factory management.",
+    "metaKeywords": "Inclue Technologies products, Babble, Babble Lite, smart factory management, industrial automation, IoT platform",
+    "title": "Our Products",
+    "subtitle": "Innovative solutions designed to transform your operations with smart technology",
+    "breadcrumb": "Products",
+    "viewDetails": "View Details",
+    "requestDemo": "Request Demo",
+    "contactSales": "Contact Sales",
+    "keyFeatures": "Key Features",
+    "detailError": "Unable to load product details. Please try again later.",
     "babble": {
       "subtitle": "Smart Factory Management System",
       "short_description": "A next-generation intelligent end-to-end IIOT platform focused on Industry 4.0, designed to monitor production processes in real-time."
@@ -145,6 +156,67 @@
     "babble_lite": {
       "subtitle": "Streamlined IoT Platform",
       "short_description": "A lightweight version of our flagship product, offering essential IoT capabilities for smaller manufacturing operations."
+    },
+    "hero": {
+      "title": "Transform Your Operations",
+      "subtitle": "Our smart technology solutions help you harness the power of Industry 4.0 and IoT to increase efficiency and drive growth.",
+      "ctaButton": "Request Demo"
+    },
+
+    "benefits": {
+      "title": "Key Benefits",
+      "subtitle": "Discover how our products can transform your operations and drive business value",
+      "description": "Our products offer numerous advantages that translate directly into operational improvements and competitive advantages.",
+
+      "performance": {
+        "title": "Enhanced Performance",
+        "description": "Get more from your existing equipment and processes through continuous monitoring and optimization."
+      },
+      "analytics": {
+        "title": "Actionable Analytics",
+        "description": "Convert raw data into meaningful insights that drive informed business decisions."
+      },
+      "customization": {
+        "title": "Flexible Customization",
+        "description": "Tailor our solutions to your specific needs and integrate with your existing systems."
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Protect your data and operations with industry-leading security features and best practices."
+      },
+      "efficiency": {
+        "title": "Operational Efficiency",
+        "description": "Streamline workflows, reduce downtime, and minimize waste to optimize your operations."
+      },
+      "scalability": {
+        "title": "Future-Ready Scalability",
+        "description": "Start where you need today and easily scale as your business grows and evolves."
+      }
+    },
+
+    "features": {
+      "title": "Features & Capabilities",
+      "description": "Our products offer powerful features designed to transform your operations and deliver tangible business value."
+    },
+
+    "specs": {
+      "title": "Technical Specifications",
+      "description": "Detailed technical information to help you understand the requirements and capabilities of our products.",
+      "systemRequirements": "System Requirements",
+      "supportedProtocols": "Supported Protocols",
+      "security": "Security Features",
+      "deployment": "Deployment Options"
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Common questions about our products and their implementation."
+    },
+
+    "tabs": {
+      "features": "Features",
+      "specifications": "Specifications",
+      "faq": "FAQ"
     }
   },
   "services": {
