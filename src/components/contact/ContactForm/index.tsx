@@ -30,10 +30,16 @@ const contactOptions = [
   { value: "partnership", label: "contact.form.options.partnership" },
 ];
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+  type?: string;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ type }) => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+
+  console.log("Type:", type);
 
   const validationSchema = Yup.object({
     name: Yup.string().required(

@@ -57,7 +57,8 @@
     "submit": "Submit",
     "success": "Success!",
     "thankYou": "Thank you for your submission!",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "getStarted": "Get Started"
   },
   "home": {
     "seo": {
@@ -242,13 +243,82 @@
     }
   },
   "industries": {
-    "manufacturing": {
-      "title": "Manufacturing",
-      "short_description": "Smart factory solutions for real-time monitoring, predictive maintenance, and optimized production processes."
-    },
+    "metaTitle": "Industry Solutions | Inclue Technologies",
+    "metaDescription": "Discover how Inclue Technologies delivers innovative solutions tailored to the unique challenges of healthcare, manufacturing, and semiconductor industries.",
+
+    "title": "Industry Solutions",
+    "subtitle": "Innovative technology solutions tailored to the unique challenges of your industry.",
+    "sectionTitle": "Industries We Serve",
+
+    "learnMore": "Learn More",
+    "overview": "Overview",
+    "challenges": "Industry Challenges",
+    "ourSolutions": "Our Solutions",
+    "benefits": "Benefits",
+    "getInTouch": "Transform Your Business",
+    "contactDescription": "Contact our team to discover how our industry-specific solutions can help your organization achieve its goals.",
+
+    "approachTitle": "Our Approach to Industry Solutions",
+    "approachDescription1": "At Inclue, we understand that each industry faces unique challenges. That's why our approach begins with a deep understanding of your specific sector, processes, and objectives. We leverage our expertise in industrial automation, IoT, and software development to create solutions that directly address your pain points.",
+    "approachDescription2": "From healthcare to manufacturing to semiconductors, we've developed specialized knowledge and tailored solutions that deliver measurable value. Our team works closely with you from concept to implementation, ensuring that our technology aligns perfectly with your business goals.",
+    "quote": "There's no good idea that cannot be improved on. Even though automation is not necessary, integrating it at your workplace adds substantial value to the business.",
+
+    "solutions": "Solutions for",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "results": "Results",
     "healthcare": {
       "title": "Healthcare",
-      "short_description": "Connected healthcare solutions with HL7® FHIR® integration for real-time patient monitoring and data exchange."
+      "short_description": "Connected healthcare solutions with HL7® FHIR® integration for real-time patient monitoring and data exchange.",
+      "description": "Inclue Technologies delivers innovative IoT solutions to transform patient care, operational efficiency, and healthcare management.",
+      "overview": "Healthcare is being integrated with technology to make lives simpler, efficient, and effective. Modern medicine primarily utilizes the knowledge of IoT (Internet of Things) in healthcare to make it more competent, easily available, and smooth. Modern medicine has unleashed a whole new level of innovative treatment in healthcare.",
+      "challengesTitle": "Challenges in Modern Healthcare",
+      "challengeData": "As an astronomical amount of data keeps on being produced and archived, it is getting increasingly difficult to log the real-time patient monitoring information to healthcare repositories.",
+      "challengeIntegration": "Though modern medicine has made equal efforts in becoming as tech-savvy as its peers, it has still not succeeding in managing big data and data exchange.",
+      "solutionTitle": "Inclue's Healthcare Solutions",
+      "solutionBabble": "Inclue has introduced Babble with a unique Health Connect module that has the HL7® FHIR® integration standard, regulating how information is exchanged safely and securely.",
+      "solutionFHIR": "FHIR enables wearable IoT devices to interact with EHR in real-time and offer immediate decision support, acting as a real-time interoperability tool.",
+      "benefitsTitle": "Benefits of Our Healthcare Solutions",
+      "benefitMonitoring": "Doctors are able to monitor patients continuously and provide personalized treatments.",
+      "benefitConnection": "Patients feel more connected since they are able to manage their vitals always.",
+      "benefitData": "Our solutions help eliminate barriers to healthcare data exchange and manage and organize big data."
+    },
+
+    "manufacturing": {
+      "title": "Manufacturing",
+      "short_description": "Smart factory solutions for real-time monitoring, predictive maintenance, and optimized production processes.",
+      "description": "Our smart factory solutions enhance productivity, quality, and safety in manufacturing operations.",
+      "overview": "Industrial automation is an integral part of Industry 4.0 and is closely associated with control engineering. Industrial automation ensures the use of control devices to monitor industrial processes, equipment, and technology by reducing labor intervention wherever possible.",
+      "challengesTitle": "Manufacturing Industry Challenges",
+      "challengeProductivity": "In manual operations, facilities need to be closed for holidays or maintenance, disrupting continuous workflow.",
+      "challengeQuality": "With manual operations, there are risks of compromises on product quality and consistency.",
+      "challengeSafety": "Many factory machines operate in hazardous and extreme situations, putting workers at risk.",
+      "solutionTitle": "Inclue's Manufacturing Solutions",
+      "solutionAutomation": "Inclue designs exceptional PLCs that can be utilized in industrial plants and factories for controlling a series of machinery.",
+      "solutionSensors": "Our Industrial Automation Sensors support making production systematized, automated, and intelligent with real-time monitoring.",
+      "solutionHMI": "Human-Machine Interfaces connect operators to machines and systems, helping in initiating and modifying processes.",
+      "benefitsTitle": "Benefits of Our Manufacturing Solutions",
+      "benefitProductivity": "Automation guarantees that a plant runs throughout the year, without any breaks or compromises on quality and accuracy.",
+      "benefitQuality": "Automation ensures uniformity in all processes, guarantying standardization and quality.",
+      "benefitCost": "Automation can streamline production lines and reduce costs, while maintaining quality."
+    },
+
+    "semiconductor": {
+      "title": "Semiconductor",
+      "description": "Specialized solutions for semiconductor manufacturers to optimize production and quality control.",
+      "overview": "The semiconductor industry demands precision, cleanliness, and consistency at every stage of production. Our specialized automation solutions address the unique challenges of wafer fabrication, testing, and packaging processes.",
+      "challengesTitle": "Semiconductor Industry Challenges",
+      "challengePrecision": "Semiconductor manufacturing requires nanometer-level precision that exceeds human capabilities.",
+      "challengeContamination": "Even microscopic contamination can ruin batches of products, requiring strict environmental controls.",
+      "challengeComplexity": "Modern semiconductor processes involve hundreds of steps with complex interdependencies.",
+      "solutionTitle": "Inclue's Semiconductor Solutions",
+      "solutionControl": "Advanced control systems that ensure precision and consistency throughout the manufacturing process.",
+      "solutionMonitoring": "Real-time monitoring and analytics for early detection of deviations or potential issues.",
+      "solutionTesting": "Automated testing and quality control systems that detect defects with high accuracy.",
+      "benefitsTitle": "Benefits of Our Semiconductor Solutions",
+      "benefitYield": "Significantly improved yield rates through better process control and monitoring.",
+      "benefitQuality": "Enhanced product quality with fewer defects and greater consistency.",
+      "benefitAgility": "Increased production agility to adapt to changing market demands."
     }
   },
   "about": {
