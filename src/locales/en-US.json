@@ -249,5 +249,56 @@
       "bio2": "Jane brings extensive expertise in IoT and cloud technologies, driving the technical innovation that powers our products and services.",
       "bio3": "Mike oversees the development and improvement of our product portfolio, ensuring they meet the highest standards of quality and user experience."
     }
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "metaDescription": "Get in touch with Inclue Technologies for smart technology solutions in manufacturing and healthcare. Contact us for inquiries, support, or partnerships.",
+    "metaKeywords": "contact Inclue Technologies, tech support, industrial automation, IoT services, Babble",
+    "title": "Get in Touch",
+    "subtitle": "We'd love to hear from you. Reach out to us for any inquiries about our products, services, or potential collaborations.",
+    "locationTitle": "Visit Our Office",
+
+    "info": {
+      "title": "Contact Information",
+      "description": "Have questions or need assistance? Our team is here to help you with any inquiries.",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Business Hours",
+      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM IST",
+      "weekend": "Saturday - Sunday: Closed"
+    },
+
+    "form": {
+      "title": "Send Us a Message",
+      "description": "Fill out the form below and we'll get back to you as soon as possible.",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "inquiryType": "Inquiry Type",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "successMessage": "Thank you for your message! We'll get back to you soon.",
+      "errorMessage": "There was an error sending your message. Please try again.",
+
+      "options": {
+        "general": "General Inquiry",
+        "sales": "Sales & Pricing",
+        "support": "Technical Support",
+        "partnership": "Partnership Opportunities"
+      },
+
+      "validation": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email address",
+        "emailInvalid": "Please enter a valid email address",
+        "phoneInvalid": "Please enter a valid phone number",
+        "inquiryTypeRequired": "Please select an inquiry type",
+        "messageRequired": "Please enter your message",
+        "messageMinLength": "Message should be at least 10 characters"
+      }
+    }
   }
 }
