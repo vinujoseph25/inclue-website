@@ -977,6 +977,27 @@
       }
     }
   },
+  "notFound": {
+    "metaTitle": "Page Not Found",
+    "metaDescription": "The requested page could not be found. Please navigate to another page on the Inclue Technologies website.",
+    "title": "Page Not Found",
+    "message": "We're sorry, but the page you were looking for doesn't exist or has been moved. Please check the URL or navigate to another section of our website.",
+    "goBack": "Go Back",
+    "goHome": "Return to Homepage",
+    "suggestedLinks": "You might be interested in these pages",
+    "searchPrompt": "Can't find what you're looking for? Try searching our site.",
+    "search": "Search Inclue",
+    "links": {
+      "products": "Our Products",
+      "services": "Our Services",
+      "contact": "Contact Us",
+      "about": "About Inclue"
+    },
+    "imageText": {
+      "disconnected": "Connection Lost",
+      "pageNotFound": "The requested resource was not found"
+    }
+  },
   "error": {
     "failedToLoadService": "Failed to load service details",
     "serviceNotFound": "Service not found",

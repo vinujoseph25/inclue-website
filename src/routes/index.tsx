@@ -22,7 +22,7 @@ const Contact = React.lazy(() => import("../pages/Contact"));
 const Resources = React.lazy(() => import("../pages/Resources"));
 const PrivacyPolicy = React.lazy(() => import("../pages/PrivacyPolicy"));
 const TermsOfService = React.lazy(() => import("../pages/TermsOfService"));
-const NotFound = React.lazy(() => import("../pages/NotFound"));
+const NotFound = React.lazy(() => import("../pages/NotFound/index"));
 
 // Loading component for suspense fallback
 const Loading = () => (
