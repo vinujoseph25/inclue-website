@@ -17,6 +17,7 @@ import {
   fadeInLeft,
   fadeInRight,
 } from "../../../animations/pageTransitions";
+// import productLandingHeroImage from "@assets/svgs/products/product-landing.svg";
 
 const ProductsHero: React.FC = () => {
   const theme = useTheme();
@@ -81,7 +82,7 @@ const ProductsHero: React.FC = () => {
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <motion.div
               variants={fadeInLeft}
               initial="hidden"
@@ -127,7 +128,7 @@ const ProductsHero: React.FC = () => {
             </motion.div>
           </Grid>
 
-          <Grid
+          {/* <Grid
             item
             xs={12}
             md={6}
@@ -146,6 +147,7 @@ const ProductsHero: React.FC = () => {
             >
               <Box
                 component="img"
+                // src={productLandingHeroImage}
                 src="/assets/images/products/hero-illustration.png"
                 alt="Inclue Babble platform"
                 sx={{
@@ -155,7 +157,7 @@ const ProductsHero: React.FC = () => {
                 }}
               />
             </motion.div>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Box>

@@ -15,7 +15,6 @@ import EmailIcon from "@mui/icons-material/Email";
 import intl from "react-intl-universal";
 import SocialLinks from "../SocialLinks";
 import NewsletterForm from "../NewsletterForm";
-import LanguageSwitcher from "../LanguageSwitcher";
 import contactInfo from "../../../utils/contactInfo";
 
 import footerLogo from "@assets/images/logo/footer.png";
@@ -192,16 +191,6 @@ const Footer: React.FC = () => {
                 >
                   {intl.get("footer.termsOfService")}
                 </FooterLink>
-                <FooterLink href="/sitemap">
-                  {intl.get("footer.sitemap")}
-                </FooterLink>
-                <Box
-                  mt={2}
-                  display="flex"
-                  justifyContent={isMobile ? "center" : "flex-start"}
-                >
-                  <LanguageSwitcher />
-                </Box>
               </Box>
             </Grid>
           </Grid>

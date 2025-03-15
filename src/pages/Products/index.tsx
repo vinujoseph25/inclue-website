@@ -13,6 +13,9 @@ import ProductBenefits from "../../components/products/ProductsBenefits";
 import { fadeInUp, staggerContainer } from "../../animations/pageTransitions";
 import SEO from "@/components/common/SEO";
 
+import babbleImage from "@assets/images/products/babble-product.jpg";
+import babbleLiteImage from "@assets/images/products/babble-lite-product.jpg";
+
 // Mock product data
 // In a real app, this would come from your API or Redux store
 const products = [
@@ -23,7 +26,7 @@ const products = [
     shortDescription: "Smart Factory Management System",
     description:
       "A next-generation intelligent end-to-end IIOT platform focused on Industry 4.0. Babble monitors every detail of your production process in real-time, increasing productivity and efficiency.",
-    image: "/assets/images/products/babble.jpg",
+    image: babbleImage,
     features: [
       "Continuous Monitoring",
       "User-Friendly Reports",
@@ -62,7 +65,7 @@ const products = [
     shortDescription: "Streamlined IoT Platform for Small to Medium Businesses",
     description:
       "A simplified version of our flagship Babble platform, designed specifically for small to medium-sized operations that need essential monitoring and data management capabilities.",
-    image: "/assets/images/products/babble-lite.jpg",
+    image: babbleLiteImage,
     features: [
       "Essential Monitoring Tools",
       "Basic Reporting",

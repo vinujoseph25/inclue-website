@@ -36,6 +36,9 @@ import {
 } from "../../animations/pageTransitions";
 import SEO from "@/components/common/SEO";
 
+import babbleImage from "@assets/images/products/babble-product.jpg";
+import babbleLiteImage from "@assets/images/products/babble-lite-product.jpg";
+
 // Mock product data
 // In a real app, this would come from your API or Redux store
 const products = [
@@ -48,7 +51,7 @@ const products = [
       "A next-generation intelligent end-to-end IIOT platform focused on Industry 4.0. Babble monitors every detail of your production process in real-time, increasing productivity and efficiency.",
     longDescription:
       "Babble is a smart factory management system designed to transform your manufacturing operations. As a next-generation intelligent end-to-end IIOT platform focused on Industry 4.0, Babble provides comprehensive visibility and control over your entire production process. By monitoring the smallest details in real-time around the clock, Babble helps increase productivity, enhance efficiency, and eliminate unnecessary downtime by identifying production and service issues before they become major problems.",
-    image: "/assets/images/products/babble.jpg",
+    image: babbleImage,
     detailImages: [
       "/assets/images/products/babble-detail-1.jpg",
       "/assets/images/products/babble-detail-2.jpg",
@@ -167,7 +170,7 @@ const products = [
       "A simplified version of our flagship Babble platform, designed specifically for small to medium-sized operations that need essential monitoring and data management capabilities.",
     longDescription:
       "Babble Lite is a streamlined IoT platform designed specifically for small to medium-sized businesses that want to leverage the power of industrial IoT without the complexity and cost of a full-scale implementation. Building on the core technologies of our flagship Babble platform, Babble Lite offers essential monitoring and data management capabilities that provide immediate value while maintaining an upgrade path as your operations grow and your requirements become more sophisticated.",
-    image: "/assets/images/products/babble-lite.jpg",
+    image: babbleLiteImage,
     detailImages: [
       "/assets/images/products/babble-lite-detail-1.jpg",
       "/assets/images/products/babble-lite-detail-2.jpg",
@@ -349,7 +352,8 @@ const ProductDetailPage: React.FC = () => {
       <SEO title={product ? product.name : intl.get("products.title")} />
       <Container maxWidth="lg">
         {/* Breadcrumbs */}
-        <Breadcrumbs
+        {/* TODO */}
+        {/* <Breadcrumbs
           separator={<NavigateNextIcon fontSize="small" />}
           aria-label="breadcrumb"
           sx={{ mt: 2, mb: 4 }}
@@ -386,7 +390,7 @@ const ProductDetailPage: React.FC = () => {
               {product.name}
             </Typography>
           )}
-        </Breadcrumbs>
+        </Breadcrumbs> */}
 
         {/* Loading state */}
         {loading && (

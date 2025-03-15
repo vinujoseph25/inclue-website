@@ -226,12 +226,12 @@ const Header: React.FC<HeaderProps> = ({
 
       {/* Spacer div to push content below the fixed header */}
       {/* TODO */}
-      {/* <Toolbar
+      <Toolbar
         sx={{
           height: transparent && !scrolled ? 80 : 70,
           transition: "height 0.3s ease-in-out",
         }}
-      /> */}
+      />
     </>
   );
 };

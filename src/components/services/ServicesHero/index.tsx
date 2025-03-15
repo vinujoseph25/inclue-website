@@ -81,7 +81,7 @@ const ServicesHero: React.FC = () => {
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <motion.div
               variants={fadeInLeft}
               initial="hidden"
@@ -127,7 +127,8 @@ const ServicesHero: React.FC = () => {
             </motion.div>
           </Grid>
 
-          <Grid
+          {/* TODO */}
+          {/* <Grid
             item
             xs={12}
             md={6}
@@ -155,7 +156,7 @@ const ServicesHero: React.FC = () => {
                 }}
               />
             </motion.div>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Box>
