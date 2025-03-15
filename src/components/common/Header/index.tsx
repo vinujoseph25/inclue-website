@@ -27,7 +27,7 @@ import { useLanguageContext } from "../../../context/LanguageContext";
 // Import icons
 import MenuIcon from "@mui/icons-material/Menu";
 
-import wordmarkLight from "../../../assets/images/logo/wordmark-light.png";
+import wordmarkLight from "@assets/svgs/logo/logo.svg";
 import wordmarkDark from "../../../assets/images/logo/wordmark-dark.png";
 
 // Styled components
@@ -61,7 +61,7 @@ const LogoContainer = styled(Box)(({ theme }) => ({
 }));
 
 const Logo = styled("img")({
-  height: 40,
+  height: 30,
   width: "auto",
 });
 
@@ -153,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({
   // TODO
   const logoSrc =
     mode === "dark"
-      ? wordmarkDark // Replace with dark logo path
+      ? wordmarkLight // Replace with dark logo path
       : wordmarkLight; // Replace with light logo path
 
   // Determine app bar class names based on props and state
@@ -225,12 +225,13 @@ const Header: React.FC<HeaderProps> = ({
       )}
 
       {/* Spacer div to push content below the fixed header */}
-      <Toolbar
+      {/* TODO */}
+      {/* <Toolbar
         sx={{
           height: transparent && !scrolled ? 80 : 70,
           transition: "height 0.3s ease-in-out",
         }}
-      />
+      /> */}
     </>
   );
 };

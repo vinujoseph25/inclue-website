@@ -41,7 +41,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
       <Box
         component="main"
         sx={{
-          pt: { xs: 8, sm: 10 }, // Space for fixed header
+          // pt: { xs: 8, sm: 10 }, // Space for fixed header
           minHeight: "100vh",
           width: "100%",
           ...restProps.sx,
@@ -65,7 +65,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
       exit="exit"
       variants={pageVariants}
       sx={{
-        pt: { xs: 8, sm: 10 }, // Space for fixed header
+        // pt: { xs: 8, sm: 10 }, // Space for fixed header
         minHeight: "100vh",
         width: "100%",
         ...restPropsForMotionBox.sx,

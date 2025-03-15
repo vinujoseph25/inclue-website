@@ -22,8 +22,8 @@ const MainLayout: React.FC = () => {
         component="main"
         sx={{
           flexGrow: 1,
-          pt: { xs: 2, sm: 3, md: 4 },
-          pb: { xs: 4, sm: 5, md: 6 },
+          // pt: { xs: 2, sm: 3, md: 4 },
+          // pb: { xs: 4, sm: 5, md: 6 },
         }}
       >
         <ErrorBoundary>

@@ -70,10 +70,11 @@ const AboutPage: React.FC = () => {
           <MissionVision />
         </motion.div>
 
+        {/* TODO */}
         {/* Team Section (if applicable) */}
-        <motion.div variants={childVariants}>
+        {/* <motion.div variants={childVariants}>
           <TeamSection />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </PageContainer>
   );

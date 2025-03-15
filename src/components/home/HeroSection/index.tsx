@@ -149,8 +149,8 @@ const HeroSection: React.FC = () => {
                 <HeroButton
                   variant="outlined"
                   sx={{
-                    ml: { xs: 0, sm: 2 },
-                    mt: { xs: 2, sm: 0 },
+                    ml: { xs: 2, sm: 2 },
+                    mt: { xs: 0, sm: 0 },
                     color: "white",
                     borderColor: "white",
                     "&:hover": {

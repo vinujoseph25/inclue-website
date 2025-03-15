@@ -197,7 +197,8 @@ const ClientsSection: React.FC = () => {
           </Box>
 
           {/* Testimonials */}
-          <Typography
+          {/* TODO */}
+          {/* <Typography
             variant="h4"
             component="h3"
             align="center"
@@ -254,7 +255,7 @@ const ClientsSection: React.FC = () => {
                 </motion.div>
               </Grid>
             ))}
-          </Grid>
+          </Grid> */}
         </motion.div>
       </Container>
     </Box>

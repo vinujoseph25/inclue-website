@@ -22,6 +22,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ListItem from "../ListItem";
 
+import mobileHeaderLogo from "@assets/svgs/logo/logo.svg";
+
 // Styled components
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   "& .MuiDrawer-paper": {
@@ -37,11 +39,11 @@ const DrawerHeader = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "space-between",
   padding: theme.spacing(0, 2, 2, 2),
-  marginBottom: theme.spacing(2),
+  // marginBottom: theme.spacing(2),
 }));
 
 const Logo = styled("img")({
-  height: 40,
+  height: 30,
   width: "auto",
 });
 
@@ -101,10 +103,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
   // Logo source based on theme
+  // TODO
   const logoSrc =
     theme.palette.mode === "dark"
-      ? "/api/placeholder/160/40" // Replace with dark logo path
-      : "/api/placeholder/160/40"; // Replace with light logo path
+      ? mobileHeaderLogo // Replace with dark logo path
+      : mobileHeaderLogo; // Replace with light logo path
 
   // Toggle expansion of menu items with children
   const handleExpandClick = (label: string) => {
@@ -132,7 +135,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   };
 
   return (
-    <StyledDrawer anchor="left" open={open} onClose={onClose}>
+    <StyledDrawer anchor="right" open={open} onClose={onClose}>
       <DrawerHeader>
         <Box component={RouterLink} to="/" onClick={handleNavigation}>
           <Logo src={logoSrc} alt="Inclue Technologies" />
