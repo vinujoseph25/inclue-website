@@ -23,12 +23,15 @@ import {
   staggerContainer,
 } from "../../../animations/pageTransitions";
 
+import manufactureringIndustryImage from "@assets/images/industries/manufacturing.jpg";
+import healthCareIndustryImage from "@assets/images/industries/healthcare.jpg";
+
 const industries = [
   {
     id: "manufacturing",
     title: "services.industries.manufacturing.title",
     description: "services.industries.manufacturing.description",
-    image: "/assets/images/services/industry-manufacturing.jpg",
+    image: manufactureringIndustryImage,
     features: [
       "services.industries.manufacturing.feature1",
       "services.industries.manufacturing.feature2",
@@ -40,7 +43,7 @@ const industries = [
     id: "healthcare",
     title: "services.industries.healthcare.title",
     description: "services.industries.healthcare.description",
-    image: "/assets/images/services/industry-healthcare.jpg",
+    image: healthCareIndustryImage,
     features: [
       "services.industries.healthcare.feature1",
       "services.industries.healthcare.feature2",

@@ -18,6 +18,10 @@ import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 
+import CEOImage from "@assets/images/about/team/CEO.jpg";
+import CTOImage from "@assets/images/about/team/CTO.jpg";
+import HoEImage from "@assets/images/about/team/HOE.jpg";
+
 const StyledCard = styled(Card)(({ theme }) => ({
   height: "100%",
   display: "flex",
@@ -60,28 +64,28 @@ const TeamSection: React.FC = () => {
   // You can replace this with actual team data
   const teamMembers = [
     {
-      name: "John Doe",
-      position: intl.get("about.team.founder_ceo"),
+      name: "Midhun C",
+      position: intl.get("about.team.designation_1"),
       bio: intl.get("about.team.bio1"),
-      image: "/api/placeholder/400/320", // Placeholder image
+      image: CEOImage,
       linkedin: "#",
-      email: "john.doe@incluetech.com",
+      email: "midhun.cheruparambil@incluetech.com",
     },
     {
-      name: "Jane Smith",
-      position: intl.get("about.team.cto"),
+      name: "Vinu Joseph",
+      position: intl.get("about.team.designation_2"),
       bio: intl.get("about.team.bio2"),
-      image: "/api/placeholder/400/320", // Placeholder image
+      image: CTOImage,
       linkedin: "#",
-      email: "jane.smith@incluetech.com",
+      email: "vinu.joseph@incluetech.com",
     },
     {
-      name: "Mike Johnson",
-      position: intl.get("about.team.product_lead"),
+      name: "Sreejith R",
+      position: intl.get("about.team.designation_3"),
       bio: intl.get("about.team.bio3"),
-      image: "/api/placeholder/400/320", // Placeholder image
+      image: HoEImage,
       linkedin: "#",
-      email: "mike.johnson@incluetech.com",
+      email: "sreejith.r@incluetech.com",
     },
   ];
 
@@ -129,7 +133,8 @@ const TeamSection: React.FC = () => {
                       {member.bio}
                     </Typography>
                     <SocialIconsWrapper>
-                      <a
+                      {/* TODO */}
+                      {/* <a
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -137,7 +142,7 @@ const TeamSection: React.FC = () => {
                         <StyledIconButton aria-label="LinkedIn">
                           <LinkedInIcon />
                         </StyledIconButton>
-                      </a>
+                      </a> */}
                       <a href={`mailto:${member.email}`}>
                         <StyledIconButton aria-label="Email">
                           <EmailIcon />

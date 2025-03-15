@@ -1,0 +1,330 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#F8F9FA" rx="15" ry="15"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.07">
+    <path d="M0,80 L600,80" stroke="#0460E9" stroke-width="1"/>
+    <path d="M0,160 L600,160" stroke="#0460E9" stroke-width="1"/>
+    <path d="M0,240 L600,240" stroke="#0460E9" stroke-width="1"/>
+    <path d="M0,320 L600,320" stroke="#0460E9" stroke-width="1"/>
+    
+    <path d="M75,0 L75,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M150,0 L150,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M225,0 L225,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M300,0 L300,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M375,0 L375,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M450,0 L450,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M525,0 L525,400" stroke="#0460E9" stroke-width="1"/>
+  </g>
+  
+  <!-- Central SCADA System Display -->
+  <g transform="translate(300, 170)">
+    <!-- Monitor Frame -->
+    <rect x="-120" y="-90" width="240" height="160" rx="5" ry="5" fill="#001B2E"/>
+    <rect x="-110" y="-80" width="220" height="140" rx="3" ry="3" fill="#CCF1FF"/>
+    
+    <!-- Process Control Visualization on Monitor -->
+    <g transform="translate(-100, -70) scale(0.85)">
+
+      <!-- Process Visualization -->
+      <rect x="0" y="20" width="200" height="130" fill="#F8F9FA"/>
+      
+      <!-- Plant/Factory Diagram -->
+      <g transform="translate(10, 30)">
+        <!-- Storage Tanks -->
+        <rect x="10" y="10" width="30" height="40" rx="2" ry="2" fill="#0099FF"/>
+        <rect x="15" y="15" width="20" height="30" fill="#58CBF9">
+          <animate attributeName="height" values="5;30;5" dur="10s" repeatCount="indefinite"/>
+        </rect>
+        
+        <rect x="50" y="10" width="30" height="40" rx="2" ry="2" fill="#0099FF"/>
+        <rect x="55" y="15" width="20" height="30" fill="#58CBF9">
+          <animate attributeName="height" values="20;10;25;15;20" dur="15s" repeatCount="indefinite"/>
+        </rect>
+        
+        <!-- Processing Units -->
+        <rect x="100" y="10" width="20" height="20" fill="#0460E9"/>
+        <rect x="130" y="10" width="20" height="20" fill="#0460E9"/>
+        <rect x="160" y="10" width="20" height="20" fill="#0460E9"/>
+        
+        <!-- Connecting Pipes -->
+        <path d="M40,30 L50,30" stroke="#001B2E" stroke-width="3"/>
+        <path d="M80,30 L100,20" stroke="#001B2E" stroke-width="3"/>
+        <path d="M120,20 L130,20" stroke="#001B2E" stroke-width="3"/>
+        <path d="M150,20 L160,20" stroke="#001B2E" stroke-width="3"/>
+        
+        <!-- Status LEDs -->
+        <circle cx="110" cy="15" r="3" fill="#CCF1FF">
+          <animate attributeName="fill" values="#CCF1FF;#0460E9;#CCF1FF" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="140" cy="15" r="3" fill="#CCF1FF">
+          <animate attributeName="fill" values="#CCF1FF;#0460E9;#CCF1FF" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="170" cy="15" r="3" fill="#CCF1FF">
+          <animate attributeName="fill" values="#CCF1FF;#0460E9;#CCF1FF" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Conveyor System -->
+        <rect x="100" y="60" width="80" height="10" fill="#001B2E"/>
+        
+        <!-- Process Line -->
+        <g>
+          <rect x="105" y="55" width="10" height="5" fill="#0460E9">
+            <animate attributeName="x" values="105;165;105" dur="5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="125" y="55" width="10" height="5" fill="#0460E9">
+            <animate attributeName="x" values="125;185;125" dur="5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="145" y="55" width="10" height="5" fill="#0460E9">
+            <animate attributeName="x" values="145;205;145" dur="5s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        
+        <!-- Control Flow -->
+        <path d="M10,80 L180,80" stroke="#0099FF" stroke-width="1" stroke-dasharray="3,2"/>
+        <path d="M10,90 L180,90" stroke="#0099FF" stroke-width="1" stroke-dasharray="3,2"/>
+        <path d="M10,100 L180,100" stroke="#0099FF" stroke-width="1" stroke-dasharray="3,2"/>
+        
+        <!-- Data Flow Points -->
+        <circle cx="70" cy="80" r="2" fill="#0460E9">
+          <animate attributeName="cx" values="10;180;10" dur="7s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="40" cy="90" r="2" fill="#0460E9">
+          <animate attributeName="cx" values="10;180;10" dur="9s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="120" cy="100" r="2" fill="#0460E9">
+          <animate attributeName="cx" values="10;180;10" dur="8s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      
+  </g>
+    
+    <!-- Monitor Stand -->
+    <rect x="-20" y="70" width="40" height="10" fill="#001B2E"/>
+    <rect x="-30" y="80" width="60" height="5" fill="#001B2E"/>
+  </g>
+  
+  <!-- Field Devices and Sensors -->
+  <!-- Sensor 1 - Temperature -->
+  <g transform="translate(110, 120)">
+    <rect x="-20" y="-15" width="40" height="30" rx="5" ry="5" fill="#0460E9"/>
+    <circle cx="0" cy="0" r="10" fill="#001B2E"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#CCF1FF">T</text>
+    
+    <!-- Data transmission to SCADA -->
+    <path d="M25,0 C50,0 100,50 180,75" stroke="#0099FF" stroke-width="2" fill="none" stroke-dasharray="5,3">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="50" cy="15" r="3" fill="#58CBF9">
+      <animate attributeName="cx" values="25;180" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="0;75" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Sensor 2 - Pressure -->
+  <g transform="translate(110, 220)">
+    <rect x="-20" y="-15" width="40" height="30" rx="5" ry="5" fill="#0460E9"/>
+    <circle cx="0" cy="0" r="10" fill="#001B2E"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#CCF1FF">P</text>
+    
+    <!-- Data transmission to SCADA -->
+    <path d="M25,0 C50,0 100,-30 180,-50" stroke="#0099FF" stroke-width="2" fill="none" stroke-dasharray="5,3">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="50" cy="-7" r="3" fill="#58CBF9">
+      <animate attributeName="cx" values="25;180" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="0;-50" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Field Controller (PLC) -->
+  <g transform="translate(110, 170)">
+    <rect x="-30" y="-25" width="60" height="50" rx="3" ry="3" fill="#001B2E"/>
+    <rect x="-25" y="-20" width="50" height="40" rx="2" ry="2" fill="#0099FF"/>
+    
+    <!-- PLC Lights -->
+    <circle cx="-15" cy="-10" r="3" fill="#CCF1FF">
+      <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-5" cy="-10" r="3" fill="#CCF1FF">
+      <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="5" cy="-10" r="3" fill="#CCF1FF">
+      <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="15" cy="-10" r="3" fill="#CCF1FF">
+      <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="0.6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- PLC Interface -->
+    <rect x="-20" y="0" width="40" height="15" fill="#001B2E"/>
+    <line x1="-15" y1="5" x2="15" y2="5" stroke="#58CBF9" stroke-width="1"/>
+    <line x1="-15" y1="10" x2="5" y2="10" stroke="#58CBF9" stroke-width="1"/>
+    
+    <!-- Data transmission to SCADA -->
+    <path d="M30,0 C60,0 120,20 180,15" stroke="#0460E9" stroke-width="2" fill="none" stroke-dasharray="5,3">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="60" cy="5" r="3" fill="#0460E9">
+      <animate attributeName="cx" values="30;180" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="0;15" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Remote Operations/Outputs -->
+  <!-- Actuator 1 - Valve -->
+  <g transform="translate(490, 120)">
+    <rect x="-20" y="-15" width="40" height="30" rx="5" ry="5" fill="#0460E9"/>
+    <circle cx="0" cy="0" r="10" fill="#001B2E"/>
+    <rect x="-5" y="-5" width="10" height="10" fill="#CCF1FF">
+      <animate attributeName="transform" attributeType="XML" type="rotate" from="0" to="90" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Command transmission from SCADA -->
+    <path d="M-25,0 C-50,0 -100,50 -180,75" stroke="#0460E9" stroke-width="2" fill="none" stroke-dasharray="5,3">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="-50" cy="15" r="3" fill="#0460E9">
+      <animate attributeName="cx" values="-180;-25" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="75;0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Actuator 2 - Motor -->
+  <g transform="translate(490, 220)">
+    <rect x="-20" y="-15" width="40" height="30" rx="5" ry="5" fill="#0460E9"/>
+    <circle cx="0" cy="0" r="10" fill="#001B2E"/>
+    <path d="M-5,-5 L5,5 M-5,5 L5,-5" stroke="#CCF1FF" stroke-width="2">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Command transmission from SCADA -->
+    <path d="M-25,0 C-50,0 -100,-30 -180,-50" stroke="#0460E9" stroke-width="2" fill="none" stroke-dasharray="5,3">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="-50" cy="-7" r="3" fill="#0460E9">
+      <animate attributeName="cx" values="-180;-25" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-50;0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Control Panel Unit -->
+  <g transform="translate(490, 170)">
+    <rect x="-30" y="-25" width="60" height="50" rx="3" ry="3" fill="#001B2E"/>
+    <rect x="-25" y="-20" width="50" height="40" rx="2" ry="2" fill="#0099FF"/>
+    
+    <!-- Panel Buttons -->
+    <circle cx="-15" cy="-5" r="5" fill="#0460E9"/>
+    <circle cx="0" cy="-5" r="5" fill="#0460E9"/>
+    <circle cx="15" cy="-5" r="5" fill="#0460E9"/>
+    
+    <!-- Panel Display -->
+    <rect x="-20" y="10" width="40" height="10" fill="#001B2E"/>
+    <text x="0" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#CCF1FF">ONLINE</text>
+    
+    <!-- Command transmission from SCADA -->
+    <path d="M-30,0 C-60,0 -120,20 -180,15" stroke="#0460E9" stroke-width="2" fill="none" stroke-dasharray="5,3">
+      <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="-60" cy="5" r="3" fill="#0460E9">
+      <animate attributeName="cx" values="-180;-30" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="15;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Database/Historical Data Storage -->
+  <g transform="translate(300, 70)">
+    <rect x="-40" y="-30" width="80" height="60" rx="5" ry="5" fill="#001B2E"/>
+    
+    <!-- Database Cylinder Shape -->
+    <ellipse cx="0" cy="-20" rx="30" ry="10" fill="#0460E9"/>
+    <rect x="-30" y="-20" width="60" height="40" fill="#0460E9"/>
+    <ellipse cx="0" cy="20" rx="30" ry="10" fill="#0460E9"/>
+    
+    <!-- Database Detail Lines -->
+    <path d="M-25,-16 L25,-16" stroke="#CCF1FF" stroke-width="1"/>
+    <path d="M-28,-8 L28,-8" stroke="#CCF1FF" stroke-width="1"/>
+    <path d="M-30,0 L30,0" stroke="#CCF1FF" stroke-width="1"/>
+    <path d="M-28,8 L28,8" stroke="#CCF1FF" stroke-width="1"/>
+    <path d="M-25,16 L25,16" stroke="#CCF1FF" stroke-width="1"/>
+    
+    <!-- Data Flow to/from SCADA -->
+    <path d="M0,30 L0,80" stroke="#0099FF" stroke-width="2" stroke-dasharray="4,2">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="0" cy="50" r="3" fill="#0099FF">
+      <animate attributeName="cy" values="30;80" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="60" r="3" fill="#58CBF9">
+      <animate attributeName="cy" values="80;30" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Network Infrastructure -->
+  <g transform="translate(300, 300)">
+    <rect x="-40" y="-30" width="80" height="30" rx="3" ry="3" fill="#001B2E"/>
+    
+    <!-- Network Switch/Router -->
+    <rect x="-35" y="-25" width="70" height="20" rx="2" ry="2" fill="#0099FF"/>
+    
+    <!-- Network Ports -->
+    <rect x="-30" y="-20" width="5" height="10" fill="#CCF1FF"/>
+    <rect x="-20" y="-20" width="5" height="10" fill="#CCF1FF"/>
+    <rect x="-10" y="-20" width="5" height="10" fill="#CCF1FF"/>
+    <rect x="0" y="-20" width="5" height="10" fill="#CCF1FF"/>
+    <rect x="10" y="-20" width="5" height="10" fill="#CCF1FF"/>
+    <rect x="20" y="-20" width="5" height="10" fill="#CCF1FF"/>
+    
+    <!-- Network Activity Lights -->
+    <circle cx="-27.5" cy="-22" r="1" fill="#0460E9">
+      <animate attributeName="fill-opacity" values="0.3;1;0.3" dur="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-17.5" cy="-22" r="1" fill="#0460E9">
+      <animate attributeName="fill-opacity" values="0.3;1;0.3" dur="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-7.5" cy="-22" r="1" fill="#0460E9">
+      <animate attributeName="fill-opacity" values="0.3;1;0.3" dur="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="2.5" cy="-22" r="1" fill="#0460E9">
+      <animate attributeName="fill-opacity" values="0.3;1;0.3" dur="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="12.5" cy="-22" r="1" fill="#0460E9">
+      <animate attributeName="fill-opacity" values="0.3;1;0.3" dur="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="22.5" cy="-22" r="1" fill="#0460E9">
+      <animate attributeName="fill-opacity" values="0.3;1;0.3" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Data Flow to SCADA -->
+    <path d="M0,-30 L0,-70" stroke="#0460E9" stroke-width="2" stroke-dasharray="4,2">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <circle cx="0" cy="-40" r="3" fill="#58CBF9">
+      <animate attributeName="cy" values="-30;-70" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="-55" r="3" fill="#0460E9">
+      <animate attributeName="cy" values="-70;-30" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

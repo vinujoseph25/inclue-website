@@ -15,6 +15,12 @@ import TestimonialCarousel from "@/components/services/TestimonialCarousel";
 import CallToAction from "@/components/services/CallToAction";
 import { fadeInUp, staggerContainer } from "../../animations/pageTransitions";
 
+import industrialAutomationImage from "@assets/svgs/services/industrial-automation.svg";
+import customIotImage from "@assets/svgs/services/custom-iot.svg";
+import plcSolutionImage from "@assets/svgs/services/plc-solutions.svg";
+import scadaIntegrationImage from "@assets/svgs/services/scada-integration.svg";
+import webDevelopmentImage from "@assets/svgs/services/web-development.svg";
+
 // Mock services data - in a real app, this would come from an API or Redux store
 const services = [
   {
@@ -23,7 +29,7 @@ const services = [
     description:
       "Comprehensive automation solutions for manufacturing facilities, including PLCs, Sensors, and HMIs to enhance productivity and efficiency.",
     icon: "factory",
-    image: "/assets/images/services/industrial-automation.jpg",
+    image: industrialAutomationImage,
     features: [
       "PLC Design & Programming",
       "Industrial Automation Sensors",
@@ -39,7 +45,7 @@ const services = [
     description:
       "Tailored IoT implementation to connect your devices and equipment, providing real-time monitoring, data collection, and actionable insights.",
     icon: "devices",
-    image: "/assets/images/services/custom-iot.jpg",
+    image: customIotImage,
     features: [
       "IoT System Architecture",
       "Sensor & Device Integration",
@@ -55,7 +61,7 @@ const services = [
     description:
       "Expert design and implementation of Programmable Logic Controllers for industrial facilities to control machines and processes with precision.",
     icon: "memory",
-    image: "/assets/images/services/plc-solutions.jpg",
+    image: plcSolutionImage,
     features: [
       "Custom PLC Programming",
       "PLC Hardware Selection",
@@ -71,7 +77,7 @@ const services = [
     description:
       "Seamless integration of SCADA systems to monitor and control industrial processes, ensuring optimal performance and reliability.",
     icon: "settings_input_component",
-    image: "/assets/images/services/scada-integration.jpg",
+    image: scadaIntegrationImage,
     features: [
       "SCADA System Design",
       "Real-time Data Acquisition",
@@ -87,7 +93,7 @@ const services = [
     description:
       "Modern, responsive web applications tailored to your business needs, with seamless API integration and secure hosting solutions.",
     icon: "code",
-    image: "/assets/images/services/web-development.jpg",
+    image: webDevelopmentImage,
     features: [
       "Custom Web Applications",
       "API Development & Integration",
@@ -123,7 +129,7 @@ const ServicesPage: React.FC = () => {
             animate="visible"
             viewport={{ once: true, amount: 0.25 }}
           >
-            <Grid container spacing={4} mt={4}>
+            <Grid container spacing={4} mt={4} justifyContent={"center"}>
               {services.map((service) => (
                 <Grid item xs={12} md={6} key={service.id}>
                   <motion.div variants={fadeInUp}>

@@ -8,6 +8,7 @@ import {
   CircularProgress,
   useTheme,
   useMediaQuery,
+  CardMedia,
 } from "@mui/material";
 
 import IndustryCard from "@components/industries/IndustryCard";
@@ -18,6 +19,8 @@ import intl from "react-intl-universal";
 import CallToAction from "@/components/home/CallToAction";
 import ErrorBoundary from "@/components/common/ErrorBoundary/ErrorBoundary";
 import SEO from "@/components/common/SEO";
+
+import industryApproachImage from "@assets/svgs/industries/approach.svg";
 
 // Animation variants
 const pageVariants = {
@@ -86,16 +89,6 @@ const Industries: React.FC = () => {
         "Automating and optimizing manufacturing operations for Industry 4.0.",
       icon: "manufacturing",
       image: "/assets/images/industries/manufacturing.jpg",
-    },
-    {
-      id: "semiconductor",
-      title: "Semiconductor",
-      description:
-        "Specialized solutions for semiconductor manufacturers to optimize production and quality control.",
-      shortDescription:
-        "Precision technology solutions for semiconductor production.",
-      icon: "semiconductor",
-      image: "/assets/images/industries/semiconductor.jpg",
     },
   ];
 
@@ -182,7 +175,11 @@ const Industries: React.FC = () => {
                 </Typography>
               </Box>
             ) : (
-              <Grid container spacing={isMobile ? 3 : 4}>
+              <Grid
+                container
+                spacing={isMobile ? 3 : 4}
+                justifyContent={"center"}
+              >
                 {industriesToShow.map((industry) => (
                   <Grid item xs={12} md={4} key={industry.id}>
                     <IndustryCard
@@ -235,21 +232,29 @@ const Industries: React.FC = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  {/* Placeholder for image */}
                   <Box
                     sx={{
-                      height: { xs: "250px", md: "400px" },
-                      width: "100%",
-                      bgcolor: "rgba(4, 96, 233, 0.1)",
-                      borderRadius: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
+                      position: "relative",
+                      pt: "56.25%" /* 16:9 Aspect Ratio */,
                     }}
                   >
-                    <Typography variant="body2" color="text.secondary">
-                      {intl.get("common.industryApproachImage")}
-                    </Typography>
+                    <CardMedia
+                      component="img"
+                      image={industryApproachImage}
+                      alt={intl.get("industries.approachImageAltText")}
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.5s ease-in-out",
+                        "&:hover": {
+                          transform: "scale(1.05)",
+                        },
+                      }}
+                    />
                   </Box>
                 </Grid>
               </Grid>

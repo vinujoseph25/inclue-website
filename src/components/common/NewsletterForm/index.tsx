@@ -6,6 +6,7 @@ import {
   Typography,
   Alert,
   InputAdornment,
+  Snackbar,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import EmailIcon from "@mui/icons-material/Email";
@@ -117,19 +118,34 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({
     }
   };
 
+  const handleCloseSnackbar = () => {
+    setSubmitStatus("idle");
+    setErrorMessage("");
+  };
+
   return (
     <Box className={className} component="form" onSubmit={handleSubmit}>
-      {submitStatus === "success" && (
-        <Alert severity="success" sx={{ mb: 2 }}>
+      <Snackbar
+        open={submitStatus === "success"}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert severity="success" onClose={handleCloseSnackbar}>
           {intl.get("newsletter.successMessage")}
         </Alert>
-      )}
+      </Snackbar>
 
-      {submitStatus === "error" && (
-        <Alert severity="error" sx={{ mb: 2 }}>
-          {errorMessage || intl.get("newsletter.errorMessage")}
+      <Snackbar
+        open={submitStatus === "error"}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert severity="error" onClose={handleCloseSnackbar}>
+          {intl.get("newsletter.errorMessage")}
         </Alert>
-      )}
+      </Snackbar>
 
       <StyledTextField
         label={intl.get("footer.email")}

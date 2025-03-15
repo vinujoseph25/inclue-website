@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#F8F9FA" rx="15" ry="15"/>
+  
+  <!-- Circuit board background pattern -->
+  <g opacity="0.07">
+    <path d="M0,80 L600,80" stroke="#0460E9" stroke-width="1"/>
+    <path d="M0,160 L600,160" stroke="#0460E9" stroke-width="1"/>
+    <path d="M0,240 L600,240" stroke="#0460E9" stroke-width="1"/>
+    <path d="M0,320 L600,320" stroke="#0460E9" stroke-width="1"/>
+    
+    <path d="M80,0 L80,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M160,0 L160,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M240,0 L240,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M320,0 L320,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M400,0 L400,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M480,0 L480,400" stroke="#0460E9" stroke-width="1"/>
+    <path d="M560,0 L560,400" stroke="#0460E9" stroke-width="1"/>
+  </g>
+  
+  <!-- Main Factory Elements -->
+  <g transform="translate(110, 70)">
+    <!-- Factory base -->
+    <rect x="60" y="180" width="280" height="80" fill="#001B2E" rx="4" ry="4"/>
+    
+    <!-- Factory main building -->
+    <rect x="80" y="120" width="240" height="60" fill="#0460E9" rx="2" ry="2"/>
+    
+    <!-- Factory roof -->
+    <polygon points="80,120 200,70 320,120" fill="#0099FF"/>
+    
+    <!-- Windows -->
+    <rect x="100" y="140" width="20" height="25" fill="#CCF1FF" rx="2" ry="2"/>
+    <rect x="140" y="140" width="20" height="25" fill="#CCF1FF" rx="2" ry="2"/>
+    <rect x="180" y="140" width="20" height="25" fill="#CCF1FF" rx="2" ry="2"/>
+    <rect x="220" y="140" width="20" height="25" fill="#CCF1FF" rx="2" ry="2"/>
+    <rect x="260" y="140" width="20" height="25" fill="#CCF1FF" rx="2" ry="2"/>
+    
+    <!-- Door -->
+    <rect x="190" y="210" width="40" height="50" fill="#58CBF9" rx="2" ry="2"/>
+    
+    <!-- Smokestacks -->
+    <rect x="110" y="75" width="20" height="45" fill="#001B2E"/>
+    <rect x="270" y="75" width="20" height="45" fill="#001B2E"/>
+    
+    <!-- Automation elements -->
+    <!-- Conveyor belt -->
+    <rect x="30" y="220" width="340" height="10" fill="#58CBF9"/>
+    
+    <!-- Products on conveyor -->
+    <rect x="60" y="205" width="20" height="15" fill="#CCF1FF"/>
+    <rect x="120" y="205" width="20" height="15" fill="#CCF1FF"/>
+    <rect x="180" y="205" width="20" height="15" fill="#CCF1FF"/>
+    <rect x="240" y="205" width="20" height="15" fill="#CCF1FF"/>
+    <rect x="300" y="205" width="20" height="15" fill="#CCF1FF"/>
+    
+    <!-- Robotic arms -->
+    <g transform="translate(70, 180)">
+      <rect x="0" y="-40" width="10" height="40" fill="#001B2E"/>
+      <rect x="-15" y="-50" width="40" height="10" fill="#0460E9"/>
+      <rect x="0" y="-80" width="10" height="30" fill="#0460E9" transform="rotate(-30, 5, -50)"/>
+      <circle cx="5" cy="-80" r="8" fill="#58CBF9"/>
+    </g>
+    
+    <g transform="translate(250, 180)">
+      <rect x="0" y="-40" width="10" height="40" fill="#001B2E"/>
+      <rect x="-15" y="-50" width="40" height="10" fill="#0460E9"/>
+      <rect x="0" y="-80" width="10" height="30" fill="#0460E9" transform="rotate(30, 5, -50)"/>
+      <circle cx="5" cy="-80" r="8" fill="#58CBF9"/>
+    </g>
+  </g>
+  
+  <!-- Data Flow Animation -->
+  <g fill="#0460E9" opacity="0.7">
+    <circle cx="100" cy="270" r="3">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="cx" values="100;140" dur="3s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="100" cy="270" r="3">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="cx" values="100;140" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="100" cy="270" r="3">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="cx" values="100;140" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="460" cy="270" r="3">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="cx" values="460;500" dur="3s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="460" cy="270" r="3">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="cx" values="460;500" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="460" cy="270" r="3">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="cx" values="460;500" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+  
+  <!-- Gear animations -->
+  <g transform="translate(450, 120)">
+    <path d="M0,0 L25,0 L25,25 L0,25 Z" fill="none"/>
+    <path d="M12.5,2.5 A10,10 0 1,0 12.5,22.5 A10,10 0 1,0 12.5,2.5" fill="#0460E9">
+      <animateTransform attributeName="transform" type="rotate" from="0 12.5 12.5" to="360 12.5 12.5" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path d="M12.5,8.5 L12.5,5 M12.5,20 L12.5,16.5 M5,12.5 L8.5,12.5 M16.5,12.5 L20,12.5 M7.5,7.5 L9.5,9.5 M15.5,15.5 L17.5,17.5 M7.5,17.5 L9.5,15.5 M15.5,9.5 L17.5,7.5" stroke="#CCF1FF" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="12.5" cy="12.5" r="3" fill="#CCF1FF"/>
+  </g>
+  
+  <g transform="translate(480, 150)">
+    <path d="M0,0 L20,0 L20,20 L0,20 Z" fill="none"/>
+    <path d="M10,2 A8,8 0 1,0 10,18 A8,8 0 1,0 10,2" fill="#0099FF">
+      <animateTransform attributeName="transform" type="rotate" from="360 10 10" to="0 10 10" dur="7s" repeatCount="indefinite"/>
+    </path>
+    <path d="M10,6 L10,4 M10,16 L10,14 M4,10 L6,10 M14,10 L16,10 M6,6 L7.5,7.5 M12.5,12.5 L14,14 M6,14 L7.5,12.5 M12.5,7.5 L14,6" stroke="#CCF1FF" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="10" cy="10" r="2" fill="#CCF1FF"/>
+  </g>
+  
+  <!-- Control panel element -->
+  <g transform="translate(460, 200)">
+    <rect x="0" y="0" width="60" height="80" rx="5" ry="5" fill="#001B2E"/>
+    <rect x="10" y="10" width="40" height="15" rx="2" ry="2" fill="#0460E9"/>
+    <circle cx="20" cy="40" r="7" fill="#0099FF"/>
+    <circle cx="40" cy="40" r="7" fill="#58CBF9"/>
+    <rect x="15" y="55" width="30" height="15" rx="7" ry="7" fill="#58CBF9"/>
+    <rect x="20" y="62" width="10" height="1" fill="#001B2E"/>
+    <rect x="35" y="62" width="5" height="1" fill="#001B2E"/>
+  </g>
+
+</svg>

@@ -22,6 +22,7 @@ import bmmLogo from "@/assets/images/clients/bmm.jpg";
 import cfaoLogo from "@/assets/images/clients/cfao.jpg";
 import torkwellLogo from "@/assets/images/clients/torkwell.jpg";
 import cumiLogo from "@/assets/images/clients/cumi.jpg";
+import plantLipidsLogo from "@assets/images/clients/plant-lipids.png";
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
   position: "relative",
@@ -86,7 +87,13 @@ const ClientsSection: React.FC = () => {
   const theme = useTheme();
 
   // Client logos (replace with actual client logos)
-  const clientLogos = [cumiLogo, torkwellLogo, cfaoLogo, bmmLogo];
+  const clientLogos = [
+    cumiLogo,
+    torkwellLogo,
+    cfaoLogo,
+    bmmLogo,
+    plantLipidsLogo,
+  ];
 
   // Testimonials (replace with actual testimonials)
   const testimonials = [

@@ -17,7 +17,7 @@ import SocialLinks from "../SocialLinks";
 import NewsletterForm from "../NewsletterForm";
 import contactInfo from "../../../utils/contactInfo";
 
-import footerLogo from "@assets/images/logo/footer.png";
+import logo from "@assets/svgs/logo/logo-footer.svg";
 
 // Import footer styles
 import footerStyles from "./styles";
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
           <Grid item xs={12} sm={6} md={3}>
             <Box mb={2}>
               <img
-                src={footerLogo}
+                src={logo}
                 alt="Inclue Technologies Logo"
                 style={{
                   height: isMobile ? "40px" : "50px",

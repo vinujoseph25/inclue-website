@@ -27,7 +27,7 @@ import { useLanguageContext } from "../../../context/LanguageContext";
 // Import icons
 import MenuIcon from "@mui/icons-material/Menu";
 
-import wordmarkLight from "@assets/svgs/logo/logo.svg";
+import logo from "@assets/svgs/logo/logo.svg";
 import wordmarkDark from "../../../assets/images/logo/wordmark-dark.png";
 
 // Styled components
@@ -72,11 +72,16 @@ interface HeaderProps {
 }
 
 // Hidden on scroll function
-function HideOnScroll(props: { children: React.ReactElement }) {
-  const { children } = props;
+function HideOnScroll(props: {
+  children: React.ReactElement;
+  disabled: boolean;
+}) {
+  const { children, disabled } = props;
   const trigger = useScrollTrigger();
 
-  return (
+  return disabled ? (
+    <>{children}</>
+  ) : (
     <Slide appear={false} direction="down" in={!trigger}>
       {children}
     </Slide>
@@ -153,8 +158,8 @@ const Header: React.FC<HeaderProps> = ({
   // TODO
   const logoSrc =
     mode === "dark"
-      ? wordmarkLight // Replace with dark logo path
-      : wordmarkLight; // Replace with light logo path
+      ? logo // Replace with dark logo path
+      : logo; // Replace with light logo path
 
   // Determine app bar class names based on props and state
   const appBarClassName = [
@@ -166,14 +171,15 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      <HideOnScroll>
+      {/* TODO hide on scoll disabled */}
+      <HideOnScroll disabled>
         <StyledAppBar
           position="fixed"
           color="default"
           className={appBarClassName}
         >
           <Container maxWidth="lg">
-            <Toolbar disableGutters>
+            <Toolbar>
               {/* Logo */}
               <LogoContainer>
                 <RouterLink to="/">
@@ -228,7 +234,7 @@ const Header: React.FC<HeaderProps> = ({
       {/* TODO */}
       <Toolbar
         sx={{
-          height: transparent && !scrolled ? 80 : 70,
+          height: isMobile ? 50 : 60,
           transition: "height 0.3s ease-in-out",
         }}
       />

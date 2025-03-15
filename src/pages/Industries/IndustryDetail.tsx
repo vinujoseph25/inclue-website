@@ -342,7 +342,7 @@ const IndustryDetail: React.FC = () => {
         >
           <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} md={12}>
                 <Typography
                   variant={isMobile ? "h3" : "h2"}
                   component="h1"
@@ -402,13 +402,7 @@ const IndustryDetail: React.FC = () => {
             paragraph
             sx={{ fontSize: "1.1rem", maxWidth: "90%" }}
           >
-            {/* {industryData.longDescription} */}
-            "Healthcare is being integrated with technology to make lives
-            simpler, efficient, and effective. Modern medicine primarily
-            utilizes the knowledge of IoT (Internet of Things) in healthcare to
-            make it more competent, easily available, and smooth. Modern
-            medicine has unleashed a whole new level of innovative treatment in
-            healthcare."
+            {industryData.longDescription}
           </Typography>
         </Container>
 

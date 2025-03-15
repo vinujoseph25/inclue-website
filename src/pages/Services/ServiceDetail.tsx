@@ -12,19 +12,25 @@ import {
   CircularProgress,
   useTheme,
   useMediaQuery,
+  CardMedia,
 } from "@mui/material";
 import ErrorBoundary from "@/components/common/ErrorBoundary/ErrorBoundary";
 import SEO from "@/components/common/SEO";
 import ServiceProcess from "@/components/services/ServiceProcess";
 import ServiceCaseStudies from "@/components/services/ServiceCaseStudies";
 import FAQAccordion from "@/components/services/FAQAccordion";
-import RelatedServices from "@/components/services/RelatedServices";
 // import ContactForm from "@/components/common/ContactForm";
 // import { useSelector, useDispatch } from "react-redux";
 // import { RootState } from "@redux/store";
 // import { fetchServiceById } from "@redux/slices/servicesSlice";
 import intl from "react-intl-universal";
 import ContactForm from "@/components/contact/ContactForm";
+
+import industrialAutomationImage from "@assets/svgs/services/industrial-automation.svg";
+import customIotImage from "@assets/svgs/services/custom-iot.svg";
+import plcSolutionImage from "@assets/svgs/services/plc-solutions.svg";
+import scadaIntegrationImage from "@assets/svgs/services/scada-integration.svg";
+import webDevelopmentImage from "@assets/svgs/services/web-development.svg";
 
 // Animation variants
 const pageVariants = {
@@ -65,6 +71,7 @@ const ServiceDetail: React.FC = () => {
     {
       id: "industrial-automation",
       title: "Industrial Automation",
+      image: industrialAutomationImage,
       description:
         "Inclue designs and engineers customized automated solutions and products that add substantial value to your business.",
       longDescription:
@@ -202,12 +209,12 @@ const ServiceDetail: React.FC = () => {
         },
       ],
       relatedServices: ["custom-iot", "plc-solutions", "web-development"],
-      image: "/assets/images/services/industrial-automation.jpg",
       icon: "automation",
     },
     {
       id: "custom-iot",
       title: "Custom IoT",
+      image: customIotImage,
       description:
         "Inclue offers tailored IoT solutions to connect and optimize your business operations.",
       longDescription:
@@ -325,12 +332,12 @@ const ServiceDetail: React.FC = () => {
         "scada-integration",
         "web-development",
       ],
-      image: "/assets/images/services/custom-iot-services.jpg",
       icon: "iot",
     },
     {
       id: "plc-solutions",
       title: "PLC Solutions",
+      image: plcSolutionImage,
       description:
         "Inclue provides advanced PLC solutions for automating industrial processes.",
       longDescription:
@@ -448,12 +455,12 @@ const ServiceDetail: React.FC = () => {
         "scada-integration",
         "web-development",
       ],
-      image: "/assets/images/services/plc-solutions.jpg",
       icon: "plc",
     },
     {
       id: "scada-integration",
       title: "SCADA Integration",
+      image: scadaIntegrationImage,
       description:
         "Inclue offers comprehensive SCADA integration services for real-time monitoring and control.",
       longDescription:
@@ -571,12 +578,12 @@ const ServiceDetail: React.FC = () => {
         "plc-solutions",
         "web-development",
       ],
-      image: "/assets/images/services/scada-integration.jpg",
       icon: "scada",
     },
     {
       id: "web-development",
       title: "Web Development",
+      image: webDevelopmentImage,
       description:
         "Inclue offers professional web development services to create high-quality websites and web applications.",
       longDescription:
@@ -694,7 +701,6 @@ const ServiceDetail: React.FC = () => {
         "plc-solutions",
         "scada-integration",
       ],
-      image: "/assets/images/services/web-development.jpg",
       icon: "web",
     },
   ];
@@ -848,21 +854,29 @@ const ServiceDetail: React.FC = () => {
                 md={5}
                 sx={{ display: { xs: "none", md: "block" } }}
               >
-                {/* Replace with actual image component */}
                 <Box
                   sx={{
-                    height: "300px",
-                    width: "100%",
-                    bgcolor: "rgba(255,255,255,0.1)",
-                    borderRadius: 2,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    position: "relative",
+                    pt: "56.25%" /* 16:9 Aspect Ratio */,
                   }}
                 >
-                  <Typography variant="body2" color="text.secondary">
-                    {intl.get("common.serviceImage")}
-                  </Typography>
+                  <CardMedia
+                    component="img"
+                    image={serviceData.image}
+                    alt={serviceData.title}
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      transition: "transform 0.5s ease-in-out",
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                      },
+                    }}
+                  />
                 </Box>
               </Grid>
             </Grid>
@@ -953,8 +967,9 @@ const ServiceDetail: React.FC = () => {
           <ServiceProcess process={serviceData.process} />
         </Container>
 
+        {/* TODO */}
         {/* Case Studies Section */}
-        <Box sx={{ bgcolor: "background.paper", py: { xs: 6, md: 10 } }}>
+        {/* <Box sx={{ bgcolor: "background.paper", py: { xs: 6, md: 10 } }}>
           <Container maxWidth="lg">
             <Typography
               variant="h4"
@@ -968,7 +983,7 @@ const ServiceDetail: React.FC = () => {
             </Typography>
             <ServiceCaseStudies caseStudies={serviceData.caseStudies} />
           </Container>
-        </Box>
+        </Box> */}
 
         {/* FAQ Section */}
         <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
@@ -984,26 +999,6 @@ const ServiceDetail: React.FC = () => {
           </Typography>
           <FAQAccordion faqs={serviceData.faqs} />
         </Container>
-
-        {/* Related Services Section */}
-        <Box sx={{ bgcolor: "background.paper", py: { xs: 6, md: 10 } }}>
-          <Container maxWidth="lg">
-            <Typography
-              variant="h4"
-              component="h2"
-              gutterBottom
-              color="primary"
-              fontWeight="bold"
-              sx={{ mb: 5 }}
-            >
-              {intl.get("services.relatedServices")}
-            </Typography>
-            <RelatedServices
-              currentServiceId={serviceData.id}
-              relatedServiceIds={serviceData.relatedServices}
-            />
-          </Container>
-        </Box>
 
         {/* Contact Form Section */}
         <Container

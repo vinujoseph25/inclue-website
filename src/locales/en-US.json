@@ -580,7 +580,7 @@
     "approachDescription1": "At Inclue, we understand that each industry faces unique challenges. That's why our approach begins with a deep understanding of your specific sector, processes, and objectives. We leverage our expertise in industrial automation, IoT, and software development to create solutions that directly address your pain points.",
     "approachDescription2": "From healthcare to manufacturing to semiconductors, we've developed specialized knowledge and tailored solutions that deliver measurable value. Our team works closely with you from concept to implementation, ensuring that our technology aligns perfectly with your business goals.",
     "quote": "There's no good idea that cannot be improved on. Even though automation is not necessary, integrating it at your workplace adds substantial value to the business.",
-
+    "approachImageAltText": "Illustration of Inclue's approach to industry solutions",
     "solutions": "Solutions for",
     "challenge": "Challenge",
     "solution": "Solution",
@@ -702,12 +702,12 @@
     "team": {
       "title": "Leadership Team",
       "subtitle": "Meet the dedicated professionals behind Inclue Technologies",
-      "founder_ceo": "Founder & CEO",
-      "cto": "Chief Technology Officer",
-      "product_lead": "Product Lead",
-      "bio1": "With over 15 years of experience in industrial automation and software development, John leads Inclue Technologies with a vision to revolutionize how businesses implement smart technology.",
-      "bio2": "Jane brings extensive expertise in IoT and cloud technologies, driving the technical innovation that powers our products and services.",
-      "bio3": "Mike oversees the development and improvement of our product portfolio, ensuring they meet the highest standards of quality and user experience."
+      "designation_1": "Co-Founder & CEO",
+      "designation_2": "Co-Founder & CTO",
+      "designation_3": "Head of Engineering",
+      "bio1": "Midhun is a visionary leader with a passion for innovation and technology. As Co-Founder & CEO, he drives the strategic direction and growth of Inclue Technologies, ensuring the delivery of cutting-edge solutions to clients worldwide.",
+      "bio2": "Vinu is the Co-Founder & CTO of Inclue Technologies. With a deep passion for technology and innovation, he leads the technical vision and oversees the development of cutting-edge solutions that drive business transformation.",
+      "bio3": "Sreejith R is the Head of Engineering at Inclue Technologies. With extensive expertise in hardware systems, he leads the development and integration of cutting-edge hardware solutions that complement our software offerings, ensuring seamless performance and reliability."
     }
   },
   "resources": {
@@ -997,6 +997,10 @@
       "disconnected": "Connection Lost",
       "pageNotFound": "The requested resource was not found"
     }
+  },
+  "newsletter": {
+    "successMessage": "Thank you for subscribing! 🎉 You're now part of our exclusive community.",
+    "errorMessage": "Oops! Something went wrong. 😔 Please try again later."
   },
   "error": {
     "failedToLoadService": "Failed to load service details",

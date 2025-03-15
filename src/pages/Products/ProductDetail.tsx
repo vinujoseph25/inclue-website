@@ -416,7 +416,7 @@ const ProductDetailPage: React.FC = () => {
 
         {/* Product detail */}
         {product && !loading && !error && (
-          <>
+          <Box my={4}>
             <Grid container spacing={4} sx={{ mb: 6 }}>
               <Grid item xs={12} md={6}>
                 <motion.div
@@ -557,7 +557,7 @@ const ProductDetailPage: React.FC = () => {
                 <ProductFaq faqs={product.faqs} />
               </TabPanel>
             </Box>
-          </>
+          </Box>
         )}
       </Container>
     </PageContainer>
