@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Box, CircularProgress } from "@mui/material";
 import MainLayout from "@/layout/MainLayout";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
 
 // Lazy loading for page components
 const Home = React.lazy(() => import("../pages/Home"));
@@ -21,6 +20,8 @@ const IndustryDetail = React.lazy(
 const About = React.lazy(() => import("../pages/About"));
 const Contact = React.lazy(() => import("../pages/Contact"));
 const Resources = React.lazy(() => import("../pages/Resources"));
+const PrivacyPolicy = React.lazy(() => import("../pages/PrivacyPolicy"));
+const TermsOfService = React.lazy(() => import("../pages/TermsOfService"));
 const NotFound = React.lazy(() => import("../pages/NotFound"));
 
 // Loading component for suspense fallback
@@ -53,6 +54,7 @@ const AppRoutes: React.FC = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="resources" element={<Resources />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-service" element={<TermsOfService />} />
           <Route path="404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Route>
