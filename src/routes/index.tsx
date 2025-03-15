@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Box, CircularProgress } from "@mui/material";
 import MainLayout from "@/layout/MainLayout";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 
 // Lazy loading for page components
 const Home = React.lazy(() => import("../pages/Home"));
@@ -51,6 +52,7 @@ const AppRoutes: React.FC = () => {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="resources" element={<Resources />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Route>
