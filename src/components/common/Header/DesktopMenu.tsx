@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   // Button,
@@ -58,18 +58,6 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
   },
 }));
 
-// const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
-//   padding: theme.spacing(1.5, 2),
-//   "&:hover": {
-//     backgroundColor: alpha(theme.palette.primary.main, 0.1),
-//   },
-//   "&.active": {
-//     backgroundColor: alpha(theme.palette.primary.main, 0.1),
-//     color: theme.palette.primary.main,
-//     fontWeight: 600,
-//   },
-// }));
-
 // Custom link component to wrap RouterLink with MenuItem
 const MenuItemLink = React.forwardRef<HTMLAnchorElement, any>((props, ref) => (
   <RouterLink to={props?.to} ref={ref} {...props} />
@@ -77,6 +65,7 @@ const MenuItemLink = React.forwardRef<HTMLAnchorElement, any>((props, ref) => (
 
 // Types
 interface MenuItem {
+  id: string;
   label: string;
   path: string;
   children?: MenuItem[];
@@ -104,16 +93,19 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
   };
 
   const handleMenuClose = () => {
-    setAnchorEl(null);
     setActiveMenu(null);
   };
+
+  useEffect(() => {
+    if (activeMenu === null) setAnchorEl(null);
+  }, [activeMenu]);
 
   // Check if a path is active (exact match or partial for subpaths)
   const isActive = (path: string) => {
     if (path === "/") {
       return location.pathname === "/";
     }
-    return location.pathname.startsWith(path);
+    return location.pathname === path;
   };
 
   return (
@@ -122,7 +114,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
         // If menu item has children, render as dropdown
         if (item.children && item.children.length > 0) {
           return (
-            <Box key={item.label}>
+            <Box key={item.id}>
               <NavLink
                 aria-haspopup="true"
                 aria-expanded={activeMenu === item.label ? "true" : undefined}
@@ -136,15 +128,15 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
                 }
                 className={isActive(item.path) ? "active" : ""}
               >
-                {intl.get(`navigation.${item.label.toLowerCase()}`) ||
-                  item.label}
+                {intl.get(`navigation.${item.id.toLowerCase()}`) || item.label}
               </NavLink>
               <StyledMenu
                 anchorEl={anchorEl}
-                open={activeMenu === item.label}
+                open={activeMenu === item.label && anchorEl !== null}
                 onClose={handleMenuClose}
+                onClick={handleMenuClose}
                 MenuListProps={{
-                  "aria-labelledby": `${item.label.toLowerCase()}-menu`,
+                  "aria-labelledby": `${item.id.toLowerCase()}-menu`,
                 }}
                 anchorOrigin={{
                   vertical: "bottom",
@@ -164,7 +156,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
                     to={child.path}
                   >
                     <Typography variant="body2">
-                      {intl.get(`navigation.${child.label.toLowerCase()}`) ||
+                      {intl.get(`navigation.${child.id.toLowerCase()}`) ||
                         child.label}
                     </Typography>
                   </StyledMenuItem>
@@ -177,12 +169,12 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuItems }) => {
         // Otherwise render as simple link
         return (
           <NavLink
-            key={item.label}
+            key={item.id}
             component={MenuItemLink}
             to={item.path}
             className={isActive(item.path) ? "active" : ""}
           >
-            {intl.get(`navigation.${item.label.toLowerCase()}`) || item.label}
+            {intl.get(`navigation.${item.id.toLowerCase()}`) || item.label}
           </NavLink>
         );
       })}

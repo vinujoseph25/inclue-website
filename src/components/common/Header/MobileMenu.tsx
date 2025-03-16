@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Drawer,
   List,
@@ -80,6 +80,7 @@ const ListItemLink = React.forwardRef<HTMLAnchorElement, any>((props, ref) => (
 
 // Types
 interface MenuItem {
+  id: string;
   label: string;
   path: string;
   children?: MenuItem[];
@@ -101,6 +102,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
   // State for expanded menu items
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Logo source based on theme
   // TODO
@@ -134,8 +136,18 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     setExpandedItems([]);
   };
 
+  useEffect(() => {
+    setMobileMenuOpen(open);
+  }, [open]);
+
+  console.log("menu close called - open prop", open);
+
   return (
-    <StyledDrawer anchor="right" open={open} onClose={onClose}>
+    <StyledDrawer
+      anchor="right"
+      open={open && mobileMenuOpen}
+      onClose={onClose}
+    >
       <DrawerHeader>
         <Box component={RouterLink} to="/" onClick={handleNavigation}>
           <Logo src={logoSrc} alt="Inclue Technologies" />
@@ -167,7 +179,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 >
                   <ListItemText
                     primary={
-                      intl.get(`navigation.${item.label.toLowerCase()}`) ||
+                      intl.get(`navigation.${item.id.toLowerCase()}`) ||
                       item.label
                     }
                   />
@@ -183,7 +195,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 >
                   <ListItemText
                     primary={
-                      intl.get(`navigation.${item.label.toLowerCase()}`) ||
+                      intl.get(`navigation.${item.id.toLowerCase()}`) ||
                       item.label
                     }
                   />
@@ -203,9 +215,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                       >
                         <ListItemText
                           primary={
-                            intl.get(
-                              `navigation.${child.label.toLowerCase()}`,
-                            ) || child.label
+                            intl.get(`navigation.${child.id.toLowerCase()}`) ||
+                            child.label
                           }
                           primaryTypographyProps={{ variant: "body2" }}
                         />

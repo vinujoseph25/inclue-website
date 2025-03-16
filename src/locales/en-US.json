@@ -6,8 +6,9 @@
     "babble_lite": "Babble Lite",
     "services": "Services",
     "industrial_automation": "Industrial Automation",
-    "iot_services": "IoT Services",
+    "custom_iot": "Custom IOT",
     "plc_solutions": "PLC Solutions",
+    "scada_integration": "SCADA Integration",
     "web_development": "Web Development",
     "industries": "Industries",
     "manufacturing": "Manufacturing",
@@ -61,7 +62,9 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "backToServices": "Back to Services",
-    "serviceImage": "Service Illustration"
+    "serviceImage": "Service Illustration",
+    "backToIndustries": "Back to Industries",
+    "frequentlyAskedQuestions": "Frequently Asked Questions"
   },
   "home": {
     "seo": {
@@ -235,11 +238,13 @@
     "detailError": "Unable to load service details. Please try again later.",
     "subheading": "Innovative solutions for your business needs",
     "description": "Inclue Technologies offers a range of specialized services to transform your business operations and enhance productivity.",
-
+    "caseStudies": "Case Studies",
+    "failedToLoadIndustries": "Failed to load industries data. Please try again later.",
     "overview": "Overview",
     "benefits": "Benefits",
     "solutions": "Our Solutions",
     "ourProcess": "Our Process",
+    "frequentlyAskedQuestions": "Frequently Asked Questions",
     "getInTouch": "Ready to Get Started?",
     "contactDescription": "Contact our team to discuss how we can help implement these solutions for your business.",
 
@@ -567,7 +572,9 @@
     "title": "Industry Solutions",
     "subtitle": "Innovative technology solutions tailored to the unique challenges of your industry.",
     "sectionTitle": "Industries We Serve",
-
+    "approachImageAltText": "Visual representation of Inclue's integrated approach to industry solutions",
+    "industryNotFound": "Industry not found",
+    "failedToLoadIndustry": "Failed to load industry details",
     "learnMore": "Learn More",
     "overview": "Overview",
     "challenges": "Industry Challenges",
@@ -580,7 +587,6 @@
     "approachDescription1": "At Inclue, we understand that each industry faces unique challenges. That's why our approach begins with a deep understanding of your specific sector, processes, and objectives. We leverage our expertise in industrial automation, IoT, and software development to create solutions that directly address your pain points.",
     "approachDescription2": "From healthcare to manufacturing to semiconductors, we've developed specialized knowledge and tailored solutions that deliver measurable value. Our team works closely with you from concept to implementation, ensuring that our technology aligns perfectly with your business goals.",
     "quote": "There's no good idea that cannot be improved on. Even though automation is not necessary, integrating it at your workplace adds substantial value to the business.",
-    "approachImageAltText": "Illustration of Inclue's approach to industry solutions",
     "solutions": "Solutions for",
     "challenge": "Challenge",
     "solution": "Solution",
@@ -784,6 +790,10 @@
         "services": "Services",
         "healthcare": "Healthcare"
       }
+    },
+    "seo": {
+      "title": "Resources & Knowledge Center",
+      "description": "Access resources from Inclue Technologies including blogs, case studies, whitepapers, and FAQs to learn more about our solutions in manufacturing and healthcare."
     }
   },
   "contact": {
@@ -924,7 +934,8 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "cookie": "Cookie Policy"
-    }
+    },
+    "cookiePolicy": "Cookie Policy"
   },
   "terms": {
     "metaTitle": "Terms of Service",
@@ -1007,6 +1018,8 @@
     "serviceNotFound": "Service not found",
     "tryAgain": "Please try again later",
     "validationError": "Please check your input and try again",
-    "formError": "There was an error submitting the form"
+    "formError": "There was an error submitting the form",
+    "failedToLoadIndustries": "Failed to load industries. Please try again later.",
+    "industryNotFound": "Industry not found"
   }
 }

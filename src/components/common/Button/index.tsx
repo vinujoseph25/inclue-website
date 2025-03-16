@@ -59,7 +59,7 @@ const Button: React.FC<ButtonProps> = ({
     ? {
         color: getMuiColor(),
         variant,
-        rounded,
+        // borderRadius: rounded ? "24px" : "",
         elevation,
         customColor: color === "white" || color === "black" ? color : undefined,
         size,

@@ -19,7 +19,7 @@ interface NewsletterFormProps {
 
 // Styled components
 const StyledTextField = styled(TextField, {
-  shouldForwardProp: (prop) => prop !== "variant",
+  shouldForwardProp: (prop) => prop !== "customVariant",
 })<{ customVariant?: "light" | "dark" }>(({ theme, customVariant }) => ({
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
@@ -68,7 +68,7 @@ const StyledTextField = styled(TextField, {
 }));
 
 const SubscribeButton = styled(Button, {
-  shouldForwardProp: (prop) => prop !== "variant",
+  shouldForwardProp: (prop) => prop !== "customVariant",
 })<{ customVariant?: "light" | "dark" }>(({ theme, customVariant }) => ({
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.common.white,

@@ -104,6 +104,70 @@ const Header: React.FC<HeaderProps> = ({
 
   // Menu items for navigation
   const menuItems = [
+    { id: "home", label: "Home", path: "/" },
+    {
+      id: "products",
+      label: "Products",
+      path: "/products",
+      children: [
+        { id: "babble", label: "Babble", path: "/products/babble" },
+        {
+          id: "babble_lite",
+          label: "Babble Lite",
+          path: "/products/babble-lite",
+        },
+      ],
+    },
+    {
+      id: "services",
+      label: "Services",
+      path: "/services",
+      children: [
+        {
+          id: "industrial_automation",
+          label: "Industrial Automation",
+          path: "/services/industrial-automation",
+        },
+        { id: "custom_iot", label: "Custom IOT", path: "/services/custom-iot" },
+        {
+          id: "plc_solutions",
+          label: "PLC Solutions",
+          path: "/services/plc-solutions",
+        },
+        {
+          id: "scada_integration",
+          label: "SCADA Integration",
+          path: "/services/scada-integration",
+        },
+        {
+          id: "web_development",
+          label: "Web Development",
+          path: "/services/web-development",
+        },
+      ],
+    },
+    {
+      id: "industries",
+      label: "Industries",
+      path: "/industries",
+      children: [
+        {
+          id: "manufacturing",
+          label: "Manufacturing",
+          path: "/industries/manufacturing",
+        },
+        {
+          id: "healthcare",
+          label: "HealthCare",
+          path: "/industries/healthcare",
+        },
+      ],
+    },
+    { id: "about", label: "About", path: "/about" },
+    { id: "resources", label: "Resources", path: "/resources" },
+    { id: "contact", label: "Contact", path: "/contact" },
+  ];
+  const menuItems2 = [
     { label: "Home", path: "/" },
     {
       label: "Products",
@@ -171,6 +235,11 @@ const Header: React.FC<HeaderProps> = ({
     .filter(Boolean)
     .join(" ");
 
+  const mobileMenuClose = () => {
+    setMobileMenuOpen(false);
+    console.log("menu close called");
+  };
+
   return (
     <div className={className}>
       {/* TODO hide on scoll disabled */}
@@ -227,7 +296,7 @@ const Header: React.FC<HeaderProps> = ({
       {isMobile && (
         <MobileMenu
           open={mobileMenuOpen}
-          onClose={() => setMobileMenuOpen(false)}
+          onClose={mobileMenuClose}
           menuItems={menuItems}
         />
       )}
