@@ -69,6 +69,7 @@ const Logo = styled("img")({
 interface HeaderProps {
   transparent?: boolean;
   showProgressBar?: boolean;
+  className?: string;
 }
 
 // Hidden on scroll function
@@ -91,6 +92,7 @@ function HideOnScroll(props: {
 const Header: React.FC<HeaderProps> = ({
   transparent = false,
   showProgressBar = false,
+  className,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -170,7 +172,7 @@ const Header: React.FC<HeaderProps> = ({
     .join(" ");
 
   return (
-    <>
+    <div className={className}>
       {/* TODO hide on scoll disabled */}
       <HideOnScroll disabled>
         <StyledAppBar
@@ -238,7 +240,7 @@ const Header: React.FC<HeaderProps> = ({
           transition: "height 0.3s ease-in-out",
         }}
       />
-    </>
+    </div>
   );
 };
 

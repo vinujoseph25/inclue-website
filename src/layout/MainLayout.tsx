@@ -4,12 +4,14 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import ErrorBoundary from "../components/common/ErrorBoundary/ErrorBoundary";
+import "./styles.css";
 
 const MainLayout: React.FC = () => {
   const theme = useTheme();
 
   return (
     <Box
+      className="app-container"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -17,8 +19,9 @@ const MainLayout: React.FC = () => {
         backgroundColor: theme.palette.background.default,
       }}
     >
-      <Header />
+      <Header className="app-header" />
       <Box
+        className="app-content"
         component="main"
         sx={{
           flexGrow: 1,
@@ -29,8 +32,8 @@ const MainLayout: React.FC = () => {
         <ErrorBoundary>
           <Outlet />
         </ErrorBoundary>
+        <Footer />
       </Box>
-      <Footer />
     </Box>
   );
 };
