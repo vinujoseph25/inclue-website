@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Official website for Inclue Technologies",
-  "author": "Inclue Technologies",
-  "license": "UNLICENSED",
+  "author": "Vinu Joseph",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

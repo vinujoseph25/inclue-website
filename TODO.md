@@ -7,5 +7,3 @@
 4. **Code Generation Templates**: A `templates` directory could contain code snippets for generating new components, pages, or Redux slices with consistent patterns.
 
 5. **Documentation**: A `docs` directory could house additional documentation about architecture decisions, component usage, and development workflows.
-
-dropdown issue
