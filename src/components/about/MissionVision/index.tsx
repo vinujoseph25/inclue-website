@@ -43,10 +43,10 @@ const MissionVision: React.FC = () => {
 
   // Company values
   const values = [
-    {
-      title: intl.get("about.values.innovation.title"),
-      description: intl.get("about.values.innovation.description"),
-    },
+    // {
+    //   title: intl.get("about.values.innovation.title"),
+    //   description: intl.get("about.values.innovation.description"),
+    // },
     // {
     //   title: intl.get("about.values.integrity.title"),
     //   description: intl.get("about.values.integrity.description"),
