@@ -1,22 +1,22 @@
 /* Import Funnel Display font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 /* Note: Replace with Funnel Display when available on Google Fonts */
 
 :root {
-  --primary-blue: #0460E9;
-  --electric-blue: #0099FF;
-  --midnight-blue: #001B2E;
-  --crystal: #58CBF9;
-  --morning: #CCF1FF;
-  --pearl: #FFFFFF;
-  
+  --primary-blue: #0460e9;
+  --electric-blue: #0099ff;
+  --midnight-blue: #001b2e;
+  --crystal: #58cbf9;
+  --morning: #ccf1ff;
+  --pearl: #ffffff;
+
   --text-primary: var(--midnight-blue);
-  --text-secondary: #596B78;
+  --text-secondary: #596b78;
   --background: var(--pearl);
   --paper: var(--morning);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --text-primary: var(--pearl);
   --text-secondary: var(--crystal);
   --background: var(--midnight-blue);
@@ -30,7 +30,8 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Replace with Funnel Display when available */
+  font-family:
+    "Roboto", sans-serif; /* Replace with Funnel Display when available */
   background-color: var(--background);
   color: var(--text-primary);
   transition: background-color 0.3s ease;
@@ -49,7 +50,9 @@ a {
 .page-transition-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .page-transition-exit {
@@ -60,7 +63,9 @@ a {
 .page-transition-exit-active {
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .fade-in {
