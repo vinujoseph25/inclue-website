@@ -11,7 +11,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'static/js/[name].[contenthash:8].js',
+    filename: 'static/js/[name].js',
     publicPath: '/',
     clean: true,
   },
@@ -40,14 +40,14 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'static/media/[name].[hash:8][ext]',
+          filename: 'static/media/[name][ext]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'static/fonts/[name].[hash:8][ext]',
+          filename: 'static/fonts/[name][ext]',
         },
       },
     ],
@@ -75,7 +75,7 @@ module.exports = {
       minify: isProduction,
     }),
     isProduction && new MiniCssExtractPlugin({
-      filename: 'static/css/[name].[contenthash:8].css',
+      filename: 'static/css/[name].css',
     }),
     isProduction && new BundleAnalyzerPlugin({
       analyzerMode: 'static',
