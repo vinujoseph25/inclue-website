@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Button,
   Grid,
   useTheme,
   useMediaQuery,
@@ -15,6 +14,7 @@ import intl from "react-intl-universal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useInView } from "react-intersection-observer";
 import ctaGraphic from "@assets/images/home/cta-graphic.svg";
+import Button from "@/components/common/Button";
 
 // Styled components
 const CTAWrapper = styled(Box)(({ theme }) => ({
@@ -183,20 +183,20 @@ const CallToAction: React.FC<CallToActionProps> = ({ className }) => {
                   variant="contained"
                   size="large"
                   endIcon={<ArrowForwardIcon />}
-                  //TODO: Uncomment and replace with correct link
-                  //   component={RouterLink}
-                  //   to="/contact"
+                  component={RouterLink}
+                  to="/contact"
                   fullWidth={isMobile}
+                  customButton
                 >
                   {intl.get("home.cta.primary_button", "Get Started")}
                 </ActionButton>
                 <SecondaryButton
                   variant="outlined"
                   size="large"
-                  //TODO: Uncomment and replace with correct link
-                  //   component={RouterLink}
-                  //   to="/products"
+                  component={RouterLink}
+                  to="/products"
                   fullWidth={isMobile}
+                  customButton
                 >
                   {intl.get("home.cta.secondary_button", "Explore Products")}
                 </SecondaryButton>

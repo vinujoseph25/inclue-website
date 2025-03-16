@@ -12,7 +12,7 @@ import ServiceCard from "@/components/services/ServiceCard";
 import ProcessTimeline from "@/components/services/ProcessTimeline";
 import IndustryOverview from "@/components/services/IndustryOverview";
 import TestimonialCarousel from "@/components/services/TestimonialCarousel";
-import CallToAction from "@/components/services/CallToAction";
+import CallToAction from "@/components/home/CallToAction";
 import { fadeInUp, staggerContainer } from "../../animations/pageTransitions";
 
 import industrialAutomationImage from "@assets/svgs/services/industrial-automation.svg";
@@ -153,11 +153,10 @@ const ServicesPage: React.FC = () => {
         {/* <Box my={10}>
           <TestimonialCarousel />
         </Box> */}
-
-        <Box my={10}>
-          <CallToAction />
-        </Box>
       </Container>
+      <Box>
+        <CallToAction />
+      </Box>
     </PageContainer>
   );
 };
