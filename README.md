@@ -1,27 +1,27 @@
 # Inclue Technologies — Web Platform
 
-A responsive React + TypeScript web platform developed for **Inclue Technologies**, presenting products, services and technology solutions across manufacturing and healthcare domains.
+> Product-facing React + TypeScript web application for a technology business serving manufacturing and healthcare domains.
 
-The project demonstrates practical frontend engineering around **responsive UI, application navigation, state management, internationalisation, theming, animation and production delivery**.
+The **Inclue Website** is a frontend engineering case study demonstrating how a multi-domain technology offering can be presented through a responsive, maintainable and structured web experience.
 
 ## What this project demonstrates
 
-- React 18 + TypeScript application development
+- React + TypeScript application development
 - Component-based frontend architecture
 - Redux Toolkit for application state
-- React Router for page and route composition
+- React Router for route composition
 - Material UI for reusable interface patterns
-- Framer Motion for purposeful interaction and animation
+- Framer Motion for interaction and animation
 - English/German internationalisation
 - Light/dark theme support
-- API integration through Axios
+- Axios-based API integration
 - Responsive, mobile-first presentation
 - SEO-conscious page structure
 - Webpack-based production builds
 
 ## Product experience
 
-The site is organised around three primary content domains:
+The application organises the business experience around three primary domains:
 
 ```text
                     Inclue Technologies
@@ -36,7 +36,7 @@ The site is organised around three primary content domains:
                                           PLC Solutions
 ```
 
-This structure keeps the user journey aligned with how a technology company communicates its offering: **who it serves, what it builds and how it delivers value**.
+This structure reflects a common product-information challenge: making a technically broad offering easy to understand and navigate.
 
 ## Frontend architecture
 
@@ -50,37 +50,37 @@ src/
 ├── locales/      # Translation resources
 ├── pages/        # Route-level experiences
 ├── redux/        # Store, slices and application state
-├── routes/       # Navigation and route configuration
-├── styles/       # Global styles and theme configuration
+├── routes/       # Navigation configuration
+├── styles/       # Global styles and themes
 ├── types/        # TypeScript domain types
-├── utils/        # Reusable pure utilities
+├── utils/        # Reusable utilities
 ├── App.tsx       # Application composition
 └── index.tsx     # Entry point
 ```
 
-The separation between pages, reusable components, state, integration and cross-cutting presentation concerns makes the application easier to evolve than a page-by-page collection of tightly coupled markup.
+The separation between pages, reusable components, state, integrations and cross-cutting concerns provides a clearer foundation than a page-by-page collection of tightly coupled markup.
 
 ## Key engineering decisions
 
 ### TypeScript-first development
 
-Domain models and component contracts are explicitly typed to reduce runtime ambiguity and make refactoring safer.
+Typed domain models and component contracts make interfaces explicit and make refactoring safer.
 
-### Centralised application state
+### Deliberate state management
 
-Redux Toolkit is used where state needs to cross page or component boundaries. Local UI concerns remain local instead of unnecessarily entering the global store.
+Redux Toolkit is used for state that genuinely crosses component or page boundaries. Local interaction state remains local where appropriate.
 
-### Internationalisation as a first-class concern
+### Internationalisation
 
-English and German content are structured through translation resources rather than hard-coded text scattered throughout components.
+English and German content are maintained through translation resources rather than hard-coded strings scattered throughout the UI.
 
 ### Theme architecture
 
-Light and dark presentation are handled through shared theme configuration, allowing visual changes to propagate consistently across the application.
+Light and dark presentation is handled through shared theme configuration so visual decisions remain consistent across the application.
 
 ### Responsive delivery
 
-The UI is designed for desktop and mobile layouts, with responsive navigation, grids, typography and interaction patterns.
+Responsive navigation, grids, typography and interaction patterns support desktop and mobile experiences.
 
 ## Getting started
 
@@ -118,24 +118,24 @@ npm run type-check
 
 ## Deployment
 
-The application produces a static production build in `build/`. The original deployment target was Hostinger; the generated build can also be served through a conventional static web host or CDN.
+The application produces a static production build in `build/`. It can be served through a conventional static host or CDN.
 
 Deployment-specific configuration should remain outside source control.
 
-## Portfolio context
+## Portfolio role
 
-Inclue Website is a **product-facing frontend case study** in my portfolio. It demonstrates the ability to turn a multi-domain technology offering into a coherent, responsive and maintainable web experience.
+Inclue Website is the **product-facing frontend case study** in my portfolio. It demonstrates the ability to turn a broad technology offering into a coherent, responsive and maintainable web experience.
 
 It complements:
 
-- **Enterprise React Platform** — scalable frontend architecture and engineering patterns
+- **Enterprise React Platform** — scalable frontend architecture
 - **SmartGenics** — industrial IoT and product engineering
 - **Data Analysis Portfolio** — data science and machine learning
-- **Software Engineering Portfolio** — broader full-stack and application engineering work
+- **Software Engineering Portfolio** — broader application engineering
 
 ## Status
 
-This is a historical production-oriented implementation. Some dependencies and platform choices reflect the original project period; the repository is retained to demonstrate practical engineering experience and product delivery.
+This is a historical production-oriented implementation. Some dependencies and platform choices reflect the original project period; the repository is retained to demonstrate practical frontend engineering and product delivery.
 
 ## Author
 
