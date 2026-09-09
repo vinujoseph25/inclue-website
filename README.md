@@ -1,139 +1,144 @@
-# Inclue Technologies Website
+# Inclue Technologies — Web Platform
 
-This repository contains the official website for Inclue Technologies Private Limited, a tech startup with innovative products and services in manufacturing and healthcare industries.
+A responsive React + TypeScript web platform developed for **Inclue Technologies**, presenting products, services and technology solutions across manufacturing and healthcare domains.
 
-## Table of Contents
+The project demonstrates practical frontend engineering around **responsive UI, application navigation, state management, internationalisation, theming, animation and production delivery**.
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Available Scripts](#available-scripts)
-- [Deployment](#deployment)
-- [Internationalization](#internationalization)
-- [Theme](#theme)
-- [Contributing](#contributing)
+## What this project demonstrates
 
-## Features
+- React 18 + TypeScript application development
+- Component-based frontend architecture
+- Redux Toolkit for application state
+- React Router for page and route composition
+- Material UI for reusable interface patterns
+- Framer Motion for purposeful interaction and animation
+- English/German internationalisation
+- Light/dark theme support
+- API integration through Axios
+- Responsive, mobile-first presentation
+- SEO-conscious page structure
+- Webpack-based production builds
 
-- Modern responsive design
-- Multi-language support (English and German)
-- Light and dark theme
-- Rich UI animations
-- SEO optimized
-- Mobile-friendly layout
+## Product experience
 
-## Technologies Used
+The site is organised around three primary content domains:
 
-- React 18 with TypeScript
-- React Router for navigation
-- Redux Toolkit for state management
-- Context API for theme and language settings
-- Material UI for design components
-- Framer Motion for animations
-- React Intl Universal for internationalization
-- Axios for API integration
-- Webpack for build optimization
+```text
+                    Inclue Technologies
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+      Industries        Products         Services
+          │                │                │
+ Manufacturing         Product          Industrial
+ Healthcare             stories          Automation
+                                          IoT Services
+                                          PLC Solutions
+```
 
-## Getting Started
+This structure keeps the user journey aligned with how a technology company communicates its offering: **who it serves, what it builds and how it delivers value**.
+
+## Frontend architecture
+
+```text
+src/
+├── api/          # API clients and integration boundaries
+├── assets/       # Images, icons and static assets
+├── components/   # Reusable UI components
+├── context/      # Theme and language providers
+├── hooks/        # Shared custom hooks
+├── locales/      # Translation resources
+├── pages/        # Route-level experiences
+├── redux/        # Store, slices and application state
+├── routes/       # Navigation and route configuration
+├── styles/       # Global styles and theme configuration
+├── types/        # TypeScript domain types
+├── utils/        # Reusable pure utilities
+├── App.tsx       # Application composition
+└── index.tsx     # Entry point
+```
+
+The separation between pages, reusable components, state, integration and cross-cutting presentation concerns makes the application easier to evolve than a page-by-page collection of tightly coupled markup.
+
+## Key engineering decisions
+
+### TypeScript-first development
+
+Domain models and component contracts are explicitly typed to reduce runtime ambiguity and make refactoring safer.
+
+### Centralised application state
+
+Redux Toolkit is used where state needs to cross page or component boundaries. Local UI concerns remain local instead of unnecessarily entering the global store.
+
+### Internationalisation as a first-class concern
+
+English and German content are structured through translation resources rather than hard-coded text scattered throughout components.
+
+### Theme architecture
+
+Light and dark presentation are handled through shared theme configuration, allowing visual changes to propagate consistently across the application.
+
+### Responsive delivery
+
+The UI is designed for desktop and mobile layouts, with responsive navigation, grids, typography and interaction patterns.
+
+## Getting started
 
 ### Prerequisites
 
-- Node.js (v16.0.0 or higher)
-- npm (v8.0.0 or higher) or yarn
+- Node.js 16+
+- npm 8+ or Yarn
 
-### Installation
+### Install
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/inclue-technologies/website.git
-   cd inclue-website
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view the website in your browser.
-
-## Project Structure
-
-```
-inclue-website/
-├── src/
-│   ├── api/          # API clients and mock data
-│   ├── assets/       # Static assets like images and icons
-│   ├── components/   # Reusable components
-│   ├── context/      # Context providers for theme and language
-│   ├── hooks/        # Custom React hooks
-│   ├── locales/      # Internationalization files
-│   ├── pages/        # Page components
-│   ├── redux/        # Redux store and slices
-│   ├── routes/       # Routing configuration
-│   ├── styles/       # Global styles and theme
-│   ├── types/        # TypeScript type definitions
-│   ├── utils/        # Utility functions
-│   ├── App.tsx       # Main application component
-│   └── index.tsx     # Entry point
-└── public/           # Public static assets
+```bash
+npm install
 ```
 
-## Available Scripts
+### Development
 
-In the project directory, you can run:
+```bash
+npm start
+```
 
-- `npm start`: Runs the app in development mode
-- `npm run build`: Builds the app for production
-- `npm run analyze`: Analyzes the bundle size
-- `npm run lint`: Lints the codebase
-- `npm run lint:fix`: Fixes linting errors automatically
-- `npm run format`: Formats code using Prettier
-- `npm run type-check`: Checks TypeScript types
+### Production build
+
+```bash
+npm run build
+```
+
+### Quality checks
+
+```bash
+npm run lint
+npm run lint:fix
+npm run format
+npm run type-check
+```
 
 ## Deployment
 
-The website is configured for deployment on Hostinger. The build process optimizes the application for best performance.
+The application produces a static production build in `build/`. The original deployment target was Hostinger; the generated build can also be served through a conventional static web host or CDN.
 
-To deploy:
+Deployment-specific configuration should remain outside source control.
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
+## Portfolio context
 
-2. The build artifacts will be stored in the `build/` directory.
+Inclue Website is a **product-facing frontend case study** in my portfolio. It demonstrates the ability to turn a multi-domain technology offering into a coherent, responsive and maintainable web experience.
 
-3. Upload the contents of the `build/` directory to your Hostinger hosting.
+It complements:
 
-## Internationalization
+- **Enterprise React Platform** — scalable frontend architecture and engineering patterns
+- **SmartGenics** — industrial IoT and product engineering
+- **Data Analysis Portfolio** — data science and machine learning
+- **Software Engineering Portfolio** — broader full-stack and application engineering work
 
-The website supports English and German languages. To add or modify translations:
+## Status
 
-1. Update the translation files in `src/locales/` directory.
-2. Use the `intl.get('key')` function to retrieve translated text in components.
+This is a historical production-oriented implementation. Some dependencies and platform choices reflect the original project period; the repository is retained to demonstrate practical engineering experience and product delivery.
 
-## Theme
+## Author
 
-The website supports both light and dark themes based on the Inclue Technologies brand guidelines. Theme settings are saved in local storage for returning visitors.
+**Vinu Joseph**
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-Developed with ❤️ for Inclue Technologies Private Limited
+Frontend Engineering · React · TypeScript · Product Engineering
